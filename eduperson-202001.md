@@ -47,7 +47,7 @@ a production enterprise directory service environment.
     - [2.2.14. eduPersonOrcid](#2214-edupersonorcid)
 - [3. Comments on Other Common Person Attributes](#3-comments-on-other-common-person-attributes)
   - [3.1. audio](#31-audio)
-  - [3.2. cn (commonName)](#32-cn-commonname)
+  - [3.2. cn (commonName)](#32-cncommonname)
   - [3.3. description](#33-description)
   - [3.4. displayName](#34-displayname)
   - [3.5. facsimileTelephoneNumber](#35-facsimiletelephonenumber)
@@ -56,21 +56,21 @@ a production enterprise directory service environment.
   - [3.8. homePostalAddress](#38-homepostaladdress)
   - [3.9. initials](#39-initials)
   - [3.10. jpegPhoto](#310-jpegphoto)
-  - [3.11. l (localityName)](#311-l-localityName)
+  - [3.11. l (localityName)](#311-llocalityName)
   - [3.12. labeledURI](#312-labeleduri)
   - [3.13. mail](#313-mail)
   - [3.14. manager](#314-manager)
   - [3.15. mobile](#315-mobile)
-  - [3.16. o (organizationName)](#316-o-organizationname)
-  - [3.17. ou (organizationUnitName)](#317-ou-organizationunitname)
+  - [3.16. o (organizationName)](#316-oorganizationname)
+  - [3.17. ou (organizationUnitName)](#317-ouorganizationunitname)
   - [3.18. pager](#318-pager)
   - [3.19. postalAddress](#319-postaladdress)
   - [3.20. postalCode](#320-postalcode)
   - [3.21. postOfficeBox](#321-postofficebox)
   - [3.22. preferredLanguage](#322-preferredlanguage)
   - [3.23. seeAlso](#323-seealso)
-  - [3.24. sn (surname)](#324-sn-surname)
-  - [3.25. st (stateOrProvinceName)](#325-st-stateorprovincename)
+  - [3.24. sn (surname)](#324-snsurname)
+  - [3.25. st (stateOrProvinceName)](#325-ststateorprovincename)
   - [3.26. street](#326-street)
   - [3.27. telephoneNumber](#327-telephonenumber)
   - [3.28. title](#328-title)
@@ -260,7 +260,7 @@ defined.
           SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:* standard; *\# of values:* multi
 
 *Definition*
 
