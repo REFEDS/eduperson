@@ -26,19 +26,20 @@ a production enterprise directory service environment.
 ### 0. Table of Contents
 
 - [1. Introduction](#1-introduction)
-  - [1.1 General Remarks](#11-general-remarks)
-  - [1.2. Identifier Concepts](#12identifier-concepts)
+  - [1.1. General Remarks](#11-general-remarks)
+  - [1.2. Identifier Concepts](#12-identifier-concepts)
   - [1.3. Scope](#13scope)
 - [2. eduPerson Object Class and Attributes](#2-eduperson-object-class-and-attributes)
-  - [2.1. eduPerson Object Class Definition](#21eduperson-object-class-definition)
+  - [2.1. eduPerson Object Class Definition](#21-eduperson-object-class-definition)
   - [2.2. eduPerson Attribute Definitions](#22-eduperson-attribute-definitions)
     - [2.2.1. eduPersonAffiliation](#221-edupersonaffiliation)
     - [2.2.2. eduPersonEntitlement](#222-edupersonentitlement)
-    - [2.2.3. eduPersonNickname ](#223-edupersonnickname-)
+    - [2.2.3. eduPersonNickname](#223-edupersonnickname)
     - [2.2.4. eduPersonOrgDN](#224-edupersonorgdn)
     - [2.2.5. eduPersonOrgUnitDN](#225-edupersonorgunitdn)
     - [2.2.6. eduPersonPrimaryAffiliation](#226-edupersonprimaryaffiliation)
     - [2.2.7. eduPersonPrimaryOrgUnitDN](#227-edupersonprimaryorgunitdn)
+    - [2.2.8. eduPersonPrincipalName](#228-edupersonprincipalname)
     - [2.2.9. eduPersonPrincipalNamePrior](#229-edupersonprincipalnameprior)
     - [2.2.10. eduPersonScopedAffiliation](#2210-edupersonscopedaffiliation)
     - [2.2.11. eduPersonTargetedID](#2211-edupersontargetedid)
@@ -87,7 +88,7 @@ a production enterprise directory service environment.
 
 # 1. Introduction
 
-## 1.1 General Remarks
+## 1.1. General Remarks
 
 The portions of the eduPerson specification intended to support LDAP
 operations include an auxiliary object class for campus directories
@@ -167,11 +168,11 @@ permanent identifier is associated with its entry for its lifetime.
 
 ***Privacy***
 
-Some identifiers are designed to preserve the principal\'s privacy and
+Some identifiers are designed to preserve the principal's privacy and
 inhibit the ability of multiple unrelated recipients from correlating
 principal activity by comparing values. Such identifiers are therefore
 REQUIRED to be opaque, having no particular relationship to the
-principal\'s other identifiers. Note that this definition permits
+principal's other identifiers. Note that this definition permits
 sharing of the identifier among multiple recipients if they are deemed
 by the attribute provider to be equivalent to a single recipient for
 privacy purposes.
@@ -216,8 +217,8 @@ attribute to another.
 
 ## 2.1. eduPerson Object Class Definition
 
-All eduPerson-defined attribute names are prefaced with \"eduPerson.\"
-The eduPerson auxiliary object class contains all of them as \"MAY\"
+All eduPerson-defined attribute names are prefaced with "eduPerson."
+The eduPerson auxiliary object class contains all of them as "MAY"
 attributes:
 
 ```
@@ -260,7 +261,7 @@ defined.
           SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:* standard; *\# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -273,7 +274,7 @@ vocabulary).
 faculty, student, staff, alum, member, affiliate, employee,
 library-walk-in
 
-*Notes *
+*Notes*
 
 If there is a value in eduPersonPrimaryAffiliation, that value MUST be
 asserted here as well.
@@ -340,7 +341,7 @@ willing to interpret their contracts with licensees to accept this
 broader definition of "library-walk-in," though specific terms may
 vary. For a more direct way of using eduPerson attributes to express
 library privilege information, see the eduPersonEntitlement value
-"urn:mace:dir:entitlement:common-lib-terms\" as defined in the MACE-Dir
+"urn:mace:dir:entitlement:common-lib-terms" as defined in the MACE-Dir
 Registry of eduPersonEntitlement
 values <http://middleware.internet2.edu/urn-mace/urn-mace-dir-entitlement.html>.
 
@@ -355,48 +356,48 @@ will decide the criteria for membership in each affiliation
 classification. What is desirable is that a reasonable person should
 find an institution's definition of the affiliation plausible.
 
-*Semantics *
+*Semantics*
 
 Each institution decides the criteria for membership in each affiliation
 classification.
 
 A reasonable person should find the listed relationships plausible.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages, controlling access to resources
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonAffiliation: faculty
 
 *Syntax: *directoryString;*Indexing:*pres, eq
 
 ### 2.2.2. eduPersonEntitlement
-(defined in eduPerson200210); *OID:*1.3.6.1.4.1.5923.1.1.1.7
+(defined in eduPerson200210); *OID:* 1.3.6.1.4.1.5923.1.1.1.7
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.7
-          NAME \'eduPersonEntitlement\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonEntitlement'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseExactMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
 URI (either URN or URL) that indicates a set of rights to specific
 resources.
 
-*Notes *
+*Notes*
 
 A simple example would be a URL for a contract with a licensed resource
-provider. When a principal\'s home institutional directory is allowed to
-assert such entitlements, the business rules that evaluate a person\'s
+provider. When a principal's home institutional directory is allowed to
+assert such entitlements, the business rules that evaluate a person's
 attributes to determine eligibility are evaluated there. The target
 resource provider does not learn characteristics of the person beyond
 their entitlement. The trust between the two parties must be established
@@ -414,7 +415,7 @@ second example below.
 The driving force behind the definition of this attribute has been the
 MACE Shibboleth project. Shibboleth defines an architecture for
 inter-institutional sharing of web resources subject to access controls.
-For further details, see the project\'s web pages
+For further details, see the project's web pages
 at <https://www.shibboleth.net>.
 
 Examples:
@@ -423,37 +424,37 @@ eduPersonEntitlement: <http://xstor.com/contracts/HEd123>
 
 eduPersonEntitlement: urn:mace:washington.edu:confocalMicroscope
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 controlling access to resources
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonEntitlement: urn:mace:washington.edu:confocalMicroscope
 
 *Syntax: *directoryString; *Indexing:*No recommendation
 
-### 2.2.3. eduPersonNickname 
-(defined in eduPerson 1.0); *OID:*1.3.6.1.4.1.5923.1.1.1.2
+### 2.2.3. eduPersonNickname
+(defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.2
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.2
-          NAME \'eduPersonNickname\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonNickname'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
 Person's nickname, or the informal name by which they are accustomed to
 be hailed.
 
-*Notes *
+*Notes*
 
 Most often a single name as opposed to displayName which often consists
 of a full name. Useful for user-friendly search by name. As distinct
@@ -471,37 +472,37 @@ malefactors!
 Application developers can use this attribute to make directory search
 functions more "user friendly."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonNickname: Spike
 
 *Syntax: *directoryString;*Indexing:*pres, eq, sub
 
 ### 2.2.4. eduPersonOrgDN
-(defined in eduPerson 1.0); *OID:*1.3.6.1.4.1.5923.1.1.1.3
+(defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.3
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.3
-          NAME \'eduPersonOrgDN\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonOrgDN'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY distinguishedNameMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.12\' SINGLE-VALUE )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
 ```
 
-*Application utility class:*core; *\# of values: *single
+*Application utility class:* core; *# of values:* single
 
 *Definition*
 
 The distinguished name (DN) of the directory entry representing the
 institution with which the person is associated.
 
-*Notes *
+*Notes*
 
 With a distinguished name, the client can do an efficient lookup in the
 institution's directory to find out more about the organization with
@@ -511,7 +512,7 @@ Cn (common name), sn (surname, family name) and this attribute,
 eduPersonOrgDN, are the three attributes satisfying the "core"
 application utility class of eduPerson.
 
-*Semantics *
+*Semantics*
 
 The directory entry pointed to by this dn should be represented in the
 X.521(2001) "organization" object class The attribute set for
@@ -545,54 +546,54 @@ default. For others, the schema may need to be extended using this
 definition (using the syntax specified by RFC4512):
 
 ```
-( 1.3.6.1.4.1.250.3.15 NAME \'labeledURIObject\' SUP top AUXILIARY
+( 1.3.6.1.4.1.250.3.15 NAME 'labeledURIObject' SUP top AUXILIARY
 
           MAY labeledURI )
 ```
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonOrgDN: o=Hogwarts, dc=hsww, dc=wiz
 
 *Syntax: *distinguishedName;*Indexing:*No recommendation
 
 ### 2.2.5. eduPersonOrgUnitDN
-(defined in eduPerson 1.0); *OID:*1.3.6.1.4.1.5923.1.1.1.4
+(defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.4
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.4
-          NAME \'eduPersonOrgUnitDN\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonOrgUnitDN'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY distinguishedNameMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.12\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
 ```
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
 The distinguished name(s) (DN) of the directory entries representing the
-person\'s Organizational Unit(s). May be multivalued, as for example, in
+person's Organizational Unit(s). May be multivalued, as for example, in
 the case of a faculty member with appointments in multiple departments
 or a person who is a student in one department and an employee in
 another.
 
-*Notes *
+*Notes*
 
 With a distinguished name, the client can do an efficient lookup in the
-institution\'s directory for information about the person\'s
+institution's directory for information about the person's
 organizational unit(s).
 
-*Semantics *
+*Semantics*
 
 The directory entry pointed to by this dn should be represented in the
-X.521(2001) \"organizational unit\" object class. In addition to
+X.521(2001) "organizational unit" object class. In addition to
 organizationalUnitName, this object class has the same optional
 attribute set as the organization object class:
 
@@ -624,39 +625,39 @@ default. For others, the schema may need to be extended using this
 definition (using the syntax specified by RFC4512):
 
 ```
-( 1.3.6.1.4.1.250.3.15 NAME \'labeledURIObject\' SUP top AUXILIARY
+( 1.3.6.1.4.1.250.3.15 NAME 'labeledURIObject' SUP top AUXILIARY
 
           MAY labeledURI )
 ```
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonOrgUnitDN: ou=Potions, o=Hogwarts, dc=hsww, dc=wiz
 
 *Syntax: *distinguishedName;*Indexing:*eq
 
 ### 2.2.6. eduPersonPrimaryAffiliation
-(defined in eduPerson 1.0); *OID:*1.3.6.1.4.1.5923.1.1.1.5
+(defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.5
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.5
-          NAME \'eduPersonPrimaryAffiliation\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonPrimaryAffiliation'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' SINGLE-VALUE )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
 ```
 
-*Application utility class:*standard; *\# of values: *single
+*Application utility class:*standard; *# of values:* single
 
 *Definition*
 
-Specifies the person\'s primary relationship to the institution in broad
+Specifies the person's primary relationship to the institution in broad
 categories such as student, faculty, staff, alum, etc. (See controlled
 vocabulary).
 
@@ -665,7 +666,7 @@ vocabulary).
 faculty, student, staff, alum, member, affiliate, employee,
 library-walk-in
 
-*Notes *
+*Notes*
 
 Appropriate if the person carries at least one of the defined
 eduPersonAffiliations. The choices of values are the same as for that
@@ -680,86 +681,85 @@ affiliation. There are application scenarios where this would be useful.
 See [eduPersonAffiliation](http://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonAffiliation)for
 further details.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 controlling access to resources
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonPrimaryAffiliation: student
 
-*Syntax: *directoryString;*Indexing:*pres, eq, sub
+*Syntax:* directoryString; *Indexing:* pres, eq, sub
 
 ### 2.2.7. eduPersonPrimaryOrgUnitDN
-(defined in eduPerson 200210); *OID:*1.3.6.1.4.1.5923.1.1.1.8
+(defined in eduPerson 200210); *OID:* 1.3.6.1.4.1.5923.1.1.1.8
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.8
-          NAME \'eduPersonPrimaryOrgUnitDN\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonPrimaryOrgUnitDN'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY distinguishedNameMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.12\' SINGLE-VALUE )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
 
 ```
 
-*Application utility class:*extended; *\# of values: *single
+*Application utility class:* extended; *# of values:* single
 
 *Definition*
 
 The distinguished name (DN) of the directory entry representing the
-person\'s primary Organizational Unit(s).
+person's primary Organizational Unit(s).
 
-*Notes *
+*Notes*
 
 Appropriate if the person carries at least one of the defined
 eduPersonOrgUnitDN. The choices of values are the same as for that
 attribute.
 
-*Semantics *
+*Semantics*
 
 Each institution populating this attribute decides the criteria for
 determining which organization unit entry is the primary one for a given
 individual.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
-eduPersonPrimaryOrgUnitDN: ou=Music Department, o=Notre Dame, dc=nd,
-dc=edu
+eduPersonPrimaryOrgUnitDN: ou=Music Department, o=Notre Dame, dc=nd, dc=edu
 
-*Syntax: *distinguishedName;*Indexing:*eq
+*Syntax:* distinguishedName; *Indexing:* eq
 
-###2.2.8. eduPersonPrincipalName
-(defined in eduPerson 1.0); *OID:*1.3.6.1.4.1.5923.1.1.1.6
+### 2.2.8. eduPersonPrincipalName
+(defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.6
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.6
-          NAME \'eduPersonPrincipalName\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonPrincipalName'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' SINGLE-VALUE )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
 ```
 
-*Application utility class:*standard; *\# of values: *single
+*Application utility class:*standard; *# of values:* single
 
 *Definition*
 
 A scoped identifier for a person. It should be represented in the form
-\"user\@scope\" where \'user\' is a name-based identifier for the person
-and where the \"scope\" portion MUST be the administrative domain of the
+"user@scope" where 'user' is a name-based identifier for the person
+and where the "scope" portion MUST be the administrative domain of the
 identity system where the identifier was created and assigned. Each
-value of \'scope\' defines a namespace within which the assigned
+value of 'scope' defines a namespace within which the assigned
 identifiers MUST be unique. Given this rule, if two
 eduPersonPrincipalName (ePPN) values are the same at a given point in
 time, they refer to the same person. There must be one and only one
-\"@\" sign in valid values of eduPersonPrincipalName.
+"@" sign in valid values of eduPersonPrincipalName.
 
 *Notes*
 
@@ -774,17 +774,17 @@ identity protocols provide for a standardized and more stable identifier
 for such applications, and these protocol-specific identifiers should be
 used whenever possible; where using a protocol-specific identifier is
 not possible, the eduPersonUniqueId attribute may be an appropriate
-\"neutral\" form. Syntactically, ePPN looks like an email address but is
+"neutral" form. Syntactically, ePPN looks like an email address but is
 not intended to be a person's published email address, or to be used as
 an email address. Consumers must not assume this is a valid email
 address for the individual. 
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 controlling access to resources and other cases where a human friendly
 identifier is needed
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonPrincipalName: <hputter@hsww.wiz>
 
@@ -796,22 +796,22 @@ account or login user names. While the UTF-8 encoding will often be
 appropriate, the specific encoding depends on the technology involved,
 and may not be limited to UTF-8 when more than LDAP is involved.
 
-*Indexing:*pres, eq, sub
+*Indexing:* pres, eq, sub
 
 ### 2.2.9. eduPersonPrincipalNamePrior
-(defined in eduPerson 201211);*OID:*1.3.6.1.4.1.5923.1.1.1.12
+(defined in eduPerson 201211); *OID:* 1.3.6.1.4.1.5923.1.1.1.12
 
 *RFC4512 definition *
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.12
-          NAME \'eduPersonPrincipalNamePrior\'
-          DESC \'eduPersonPrincipalNamePrior per Internet2\'
+          NAME 'eduPersonPrincipalNamePrior'
+          DESC 'eduPersonPrincipalNamePrior per Internet2'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -823,12 +823,14 @@ populated if ePPN values are ever reassigned to a different entry
 (after, for example, a period of dormancy). That is, they MUST be unique
 in space and over time.
 
-*Notes *This attribute provides a historical record of ePPN values
+*Notes* 
+
+This attribute provides a historical record of ePPN values
 associated with an entry, provided the values are not subject to
 reassignment. It is permissible to reassign ePPN values, but doing so
 precludes the use of this attribute; consumers must be able to assume
 that a historical ePPN value is associated with exactly one entry for
-all time. As an identifier that may be based on a user\'s name, values
+all time. As an identifier that may be based on a user's name, values
 of ePPN may change over time, and this creates problems for applications
 that are limited in their capacity to accommodate less friendly
 identifiers. To improve the user experience in such cases, applications
@@ -845,53 +847,53 @@ deprovisioning scenario.
 
 *Example (LDIF Fragment)*
 
-eduPersonPrincipalName: <baz@hsww.wiz>\
-eduPersonPrincipalNamePrior: <foo@hsww.wiz>\
+eduPersonPrincipalName: <baz@hsww.wiz>
+eduPersonPrincipalNamePrior: <foo@hsww.wiz>
 eduPersonPrincipalNamePrior: <bar@hsww.wiz>
 
-*Syntax: *directoryString;
+*Syntax:* directoryString;
 
-*Indexing: *pres, eq, sub
+*Indexing:* pres, eq, sub
 
 ### 2.2.10. eduPersonScopedAffiliation
-(defined in eduPerson (200312)); *OID:*1.3.6.1.4.1.5923.1.1.1.9
+(defined in eduPerson (200312)); *OID:* 1.3.6.1.4.1.5923.1.1.1.9
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.9
-          NAME \'eduPersonScopedAffiliation\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonScopedAffiliation'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
-Specifies the person\'s affiliation within a particular security domain
+Specifies the person's affiliation within a particular security domain
 in broad categories such as student, faculty, staff, alum, etc. The
-values consist of a left and right component separated by an \"@\" sign.
+values consist of a left and right component separated by an "@" sign.
 The left component is one of the values from the eduPersonAffiliation
 controlled vocabulary.This right-hand side syntax of
 eduPersonScopedAffiliation intentionally matches that used for the
-right-hand side values for eduPersonPrincipalName. The \"scope\" portion
+right-hand side values for eduPersonPrincipalName. The "scope" portion
 MUST be the administrative domain to which the affiliation applies.
-Multiple \"@\" signs are not recommended, but in any case, the first
-occurrence of the \"@\" sign starting from the left is to be taken as
+Multiple "@" signs are not recommended, but in any case, the first
+occurrence of the "@" sign starting from the left is to be taken as
 the delimiter between components. Thus, user identifier is to the left,
-security domain to the right of the first \"@\". This parsing rule
-conforms to the POSIX \"greedy\" disambiguation method in regular
+security domain to the right of the first "@". This parsing rule
+conforms to the POSIX "greedy" disambiguation method in regular
 expression processing.
 
 *Permissible values*
 
 See controlled vocabulary for eduPersonAffiliation. Only these values
-are allowed to the left of the \"@\" sign. The values to the right of
-the \"@\" sign shouldindicate a security domain.
+are allowed to the left of the "@" sign. The values to the right of
+the "@" sign shouldindicate a security domain.
 
-*Notes *
+*Notes*
 
 Consumers of eduPersonScopedAffiliation will have to decide whether or
 not they trust values of this attribute. In the general case, the
@@ -900,47 +902,47 @@ authoritative speaker for the truth of the assertion. Trust must be
 established out of band with respect to exchanges of this attribute
 value.
 
-*Semantics *
+*Semantics*
 
-An eduPersonScopedAffiliation value of \"x\@y\" is to be interpreted as
+An eduPersonScopedAffiliation value of "x@y" is to be interpreted as
 an assertion that the person in whose entry this value occurs holds an
-affiliation of type \"x\" within the security domain \"y.\"
+affiliation of type "x" within the security domain "y."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages, controlling access to resources
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 eduPersonScopedAffiliation: <faculty@cs.berkeley.edu>
 
-*Syntax: *directoryString;*Indexing:*pres, eq
+*Syntax:* directoryString; *Indexing:* pres, eq
 
 ### 2.2.11. eduPersonTargetedID
-(defined in eduPerson 200312); *OID:*1.3.6.1.4.1.5923.1.1.1.10
+(defined in eduPerson 200312); *OID:* 1.3.6.1.4.1.5923.1.1.1.10
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.10
-          NAME \'eduPersonTargetedID\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonTargetedID'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseExactMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *NOTE: eduPersonTargetedID is DEPRECATED and will be marked as obsolete
 in a future version of this specification. Its equivalent definition in
 SAML 2.0 has been replaced by a new specification for standard Subject
 Identifier attributes
-\[<https://docs.oasis-open.org/security/saml-subject-id-attr/v1.0/saml-subject-id-attr-v1.0.html>\],
-one of which (\"urn:oasis:names:tc:SAML:attribute:pairwise-id\") is a
+[<https://docs.oasis-open.org/security/saml-subject-id-attr/v1.0/saml-subject-id-attr-v1.0.html>],
+one of which ("urn:oasis:names:tc:SAML:attribute:pairwise-id") is a
 direct replacement for this identifier with a simpler syntax and safer
 comparison rules. Existing use of this attribute in SAML 1.1 or SAML 2.0
 should be phased out in favor of the new Subject Identifier
-attributes.\"*
+attributes."*
 
 *Definition*
 
@@ -948,10 +950,10 @@ A persistent, non-reassigned, opaque identifier for a principal.
 
 eduPersonTargetedID is an abstracted version of the SAML V2.0 Name
 Identifier format of
-\"urn:oasis:names:tc:SAML:2.0:nameid-format:persistent\" (see
+"urn:oasis:names:tc:SAML:2.0:nameid-format:persistent" (see
 <http://www.oasis-open.org/committees/download.php/35711>). In SAML,
 this is an XML construct consisting of a string value inside a
-\<saml:NameID\> element along with a number of XML attributes, of most
+<saml:NameID> element along with a number of XML attributes, of most
 significance NameQualifier and SPNameQualifier, which identify the
 source and intended audience of the value. It is left to specific
 profiles to define alternate syntaxes, if any, to the standard XML
@@ -964,7 +966,7 @@ source of the identifier is termed an identity provider and the name of
 the source takes the form of a SAML V2.0 entityID, which is an absolute
 URI. The name of the intended audience also takes the form of an
 absolute URI, and may refer to a single service provider or a collection
-of service providers (for which SAML V2.0 uses the term \"Affiliation\",
+of service providers (for which SAML V2.0 uses the term "Affiliation",
 not to be confused with the ordinary eduPerson use of the term).
 
 Per the SAML format definition, the identifier portion MUST NOT exceed
@@ -974,11 +976,11 @@ Per the SAML format definition, the identifier portion MUST NOT exceed
 In SAML, a service provider is an abstract designation and may or may
 not refer to a single application or physical system. As a result, and
 because service providers may be grouped arbitrarily into
-\"Affiliations\" for policy purposes, the intended audience of an
-eduPersonTargetedID may be (and often is) limited to a single \"target\"
+"Affiliations" for policy purposes, the intended audience of an
+eduPersonTargetedID may be (and often is) limited to a single "target"
 application, or may consist of a large number of related applications.
 This is at the discretion of the identity provider. The value of the
-principal identifier SHOULD be different for different \"audience\"
+principal identifier SHOULD be different for different "audience"
 values, but this is also at the discretion of the identity provider.
 
 This attribute may or may not be stored in a typical Directory Service
@@ -996,7 +998,7 @@ As defined by SAML, eduPersonTargetedID values are not required to have
 a specific lifetime, but the association SHOULD be maintained longer
 than a single user interaction and long enough to be useful as a key for
 consuming services. Protocols might also be used to refresh (or
-\"roll-over\") an identifier by communicating such changes to service
+"roll-over") an identifier by communicating such changes to service
 providers to avoid a loss of service. (SAML V2.0 includes one such
 example.) This may be needed in the event that the association between
 the principal and the identifier becomes public, if privacy requirements
@@ -1006,10 +1008,10 @@ are involved.
 
 This attribute is designed in part to aid in the preservation of user
 privacy. It is therefore REQUIRED to be opaque, having no particular
-relationship to the principal\'s other identifiers, such as a local
+relationship to the principal's other identifiers, such as a local
 username. It MAY be a pseudorandom value generated and stored by the
 identity provider, or MAY be derived from some function over the
-audience\'s identity and other principal-specific input(s), such as a
+audience's identity and other principal-specific input(s), such as a
 serial number or UUID assigned by the identity provider.
 
 This attribute is also designed to inhibit, when appropriate, the
@@ -1018,8 +1020,8 @@ comparing values. This is achieved when desired by varying the
 identifier based on the intended audience.
 
 In other words, there is no guarantee of non-correlation, but there is
-an assumption of non-correlation from the relying party\'s perspective
-outside of explicitly arranged \"Affiliations\" of relying parties and
+an assumption of non-correlation from the relying party's perspective
+outside of explicitly arranged "Affiliations" of relying parties and
 cooperating identity providers prepared to recognize them.
 
 *Uniqueness*
@@ -1028,7 +1030,7 @@ A value of this attribute is intended only for consumption by a specific
 audience of services (often a single one). Values of this attribute
 therefore MUST be unique within the namespace of the identity provider
 and the namespace of the service provider(s) for whom the value is
-created. The value is \"qualified\" by these two namespaces and need not
+created. The value is "qualified" by these two namespaces and need not
 be unique outside them; the uniqueness of the identifier therefore
 depends on all three pieces of information.
 
@@ -1067,33 +1069,33 @@ long-term account linking relationship between an identity provider and
 service provider(s) (or other identity/attribute provider).
 
 ### 2.2.12. eduPersonAssurance
-(defined in eduPerson 200806); *OID:*1.3.6.1.4.1.5923.1.1.1.11
+(defined in eduPerson 200806); *OID:* 1.3.6.1.4.1.5923.1.1.1.11
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.11
-          NAME \'eduPersonAssurance\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonAssurance'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseExactMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
 Set of URIs that assert compliance with specific standards for identity
 assurance.
 
-*Notes *
+*Notes*
 
 This multi-valued attribute represents identity assurance profiles
 (IAPs), which are the set of standards that are met by an identity
-assertion, based on the Identity Provider\'s identity management
+assertion, based on the Identity Provider's identity management
 processes, the type of authentication credential used, the strength of
 its binding, etc. An example of such a standard is the InCommon
-Federation\'s proposed IAPs.
+Federation's proposed IAPs.
 
 Those establishing values for this attribute should provide
 documentation explaining the semantics of the values.
@@ -1107,7 +1109,7 @@ management systems and authentication events and the processes and
 procedures governing their operation and to be able to assess whether or
 not a given transaction meets the requirements for access.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 Determining strength of asserted identity for on-line transactions,
 especially those involving more than minimal institutional risk
@@ -1116,27 +1118,29 @@ resulting from errors in authentication.
 A system supporting access to grants management in order to provide
 assurance for financial transactions.
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
-eduPersonAssurance: urn:mace:incommon:IAQ:sample \
+
+eduPersonAssurance: urn:mace:incommon:IAQ:sample 
 eduPersonAssurance: <http://idm.example.org/LOA#sample>
 
-*Syntax: *directoryString;*Indexing:*No recommendation
+
+*Syntax: *directoryString; *Indexing:* No recommendation
 
 ### 2.2.13. eduPersonUniqueId
-(defined in eduPerson 201305); *OID:*1.3.6.1.4.1.5923.1.1.1.13
+(defined in eduPerson 201305); *OID:* 1.3.6.1.4.1.5923.1.1.1.13
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.13
-          NAME \'eduPersonUniqueId\'
-          DESC \'eduPersonUniqueId per Internet2\'
+          NAME 'eduPersonUniqueId'
+          DESC 'eduPersonUniqueId per Internet2'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *\# of values: *single
+*Application utility class:* standard; *# of values:* single
 
 *Definition*
 
@@ -1158,10 +1162,10 @@ principals associated with a single person with a single value of this
 attribute.
 
 This identifier is scoped (see section 1.3) and of the form
-uniqueID\@scope. The \"uniqueID\" portion MUST be unique within the
+uniqueID@scope. The "uniqueID" portion MUST be unique within the
 context of the issuing identity system and MUST contain only
 alphanumeric characters (a-z, A-Z, 0-9). The length of the uniqueID
-portion MUST be less than or equal to 64 characters. The \"scope\"
+portion MUST be less than or equal to 64 characters. The "scope"
 portion MUST be the administrative domain of the identity system where
 the identifier was created and assigned. The scope portion MAY contain
 any Unicode character. The length of the scope portion MUST be less than
@@ -1181,26 +1185,28 @@ stable identifier for a principal that will be unique across time.
 
 *Example (LDIF Fragment)*
 
+
 eduPersonUniqueId: <28c5353b8bb34984a8bd4169ba94c606@foo.edu>
 
-*Syntax: *directoryString;
 
-*Indexing: *pres, eq
+*Syntax:* directoryString;
+
+*Indexing:* pres, eq
 
 ### 2.2.14. eduPersonOrcid
-(defined in eduPerson 201602); *OID:*1.3.6.1.4.1.5923.1.1.1.16
+(defined in eduPerson 201602); *OID:* 1.3.6.1.4.1.5923.1.1.1.16
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.16
-          NAME \'eduPersonOrcid\'
-          DESC \'ORCID researcher identifiers belonging to the principal\'
+          NAME 'eduPersonOrcid'
+          DESC 'ORCID researcher identifiers belonging to the principal'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -1227,9 +1233,9 @@ NIH/NLM SciENcv self-service web application.
 
 eduPersonOrcid: <http://orcid.org/0000-0002-1825-0097>
 
-*Syntax: *directoryString;
+*Syntax:* directoryString;
 
-*Indexing: *pres, eq
+*Indexing:* pres, eq
 
 # 3. Comments on Other Common Person Attributes
 
@@ -1241,282 +1247,282 @@ attribute, it can be found here. For details on the syntax and other
 aspects of these attributes, see the appropriate standards documents.
 
 ## 3.1. audio
-(defined in RFC2798); *OID:*0.9.2342.19200300.100.1.55
+(defined in RFC2798); *OID:* 0.9.2342.19200300.100.1.55
 
-*Application utility class:*no recommendation;
+*Application utility class:* no recommendation;
 
 *Definition*
 
-RFC1274 notes that the proprietary format they recommend is \"interim\"
+RFC1274 notes that the proprietary format they recommend is "interim"
 only.
 
-*Notes *
+*Notes*
 
 Avoid. Not clearly defined, no de facto standard.
 
 ## 3.2. cn (commonName)
-(defined in RFC4519, included in \'person\'); *OID:*2.5.4.3
+(defined in RFC4519, included in 'person'); *OID:* 2.5.4.3
 
-*Application utility class:*core; *\# of values: *multi
+*Application utility class:* core; *# of values:* multi
 
 *Definition*
 
 Common name.
 
-According to RFC4519, \"The \'cn\' (\'commonName\' in X.500) attribute
+According to RFC4519, "The 'cn' ('commonName' in X.500) attribute
 type contains names of an object. Each name is one value of this
 multi-valued attribute. If the object corresponds to a person, it is
-typically the person\'s full name.\"
+typically the person's full name."
 
-*Notes *
+*Notes*
 
 Required. One of the two required attributes in the person object class
-(the other is sn). As such it is one of three recommended \"core
-application utility\" attributes. The third is eduPersonOrgDN.
+(the other is sn). As such it is one of three recommended "core
+application utility" attributes. The third is eduPersonOrgDN.
 
-With eduPersonOrgDN and cn, the client knows the person\'s name and the
+With eduPersonOrgDN and cn, the client knows the person's name and the
 distinguished name of the organization with which he/she is associated.
-The latter could help them find a directory entry for the person\'s
+The latter could help them find a directory entry for the person's
 organization.
 
 This attribute is often overloaded in the sense that many applications
-act as if this were \"their\" attribute, and therefore add values to
+act as if this were "their" attribute, and therefore add values to
 this attribute as they see fit. Because of that it is impossible to give
 a precise and accurate definition of what this field means.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 all
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 cn: Mary Francis Xavier
 
 ## 3.3. description
-(defined in RFC4519); *OID:*2.5.4.13
+(defined in RFC4519); *OID:* 2.5.4.13
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
 Open-ended; whatever the person or the directory manager puts here.
-According to RFC4519, \"The \'description\' attribute type contains
+According to RFC4519, "The 'description' attribute type contains
 human-readable descriptive phrases about the object. Each description is
-one value of this multi-valued attribute.\"
+one value of this multi-valued attribute."
 
-*Notes *
+*Notes*
 
 Can be anything.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 description: A jolly good felon
 
 ## 3.4. displayName
-(defined in RFC2798); *OID:*2.16.840.1.113730.3.1.241
+(defined in RFC2798); *OID:* 2.16.840.1.113730.3.1.241
 
-*Application utility class:*standard; *\# of values: *single
+*Application utility class:* standard; *# of values:* single
 
 *Definition*
 
 The name(s) that should appear in white-pages-like applications for this
 person.
 
-From RFC2798 description: \"preferred name of a person to be used when
-displaying entries.\"
+From RFC2798 description: "preferred name of a person to be used when
+displaying entries."
 
-*Notes *
+*Notes*
 
 Cn (common name) is multi-valued and overloaded to meet the needs of
 multiple applications. displayName is a better candidate for use in DoD
 white pages and configurable email clients.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages, email client
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 displayName: Jack Dougherty
 
 ## 3.5. facsimileTelephoneNumber
-(defined in RFC4519); *OID:*2.5.4.23
+(defined in RFC4519); *OID:* 2.5.4.23
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-According to RFC4519: \"The \'facsimileTelephoneNumber\' attribute type
+According to RFC4519: "The 'facsimileTelephoneNumber' attribute type
 contains telephone numbers (and, optionally, the parameters) for
 facsimile terminals. Each telephone number is one value of this
-multi-valued attribute.\"
+multi-valued attribute."
 
-*Notes *
+*Notes*
 
 Attribute values should comply with the international format specified
-in ITU Recommendation E.123: e.g., \"+44 71 123 4567.\"
+in ITU Recommendation E.123: e.g., "+44 71 123 4567."
 
-*Semantics *
+*Semantics*
 
 A fax number for the directory entry.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 facsimileTelephoneNumber: +44 71 123 4567
 
 ## 3.6. givenName
-(defined in RFC4519); *OID:*2.5.4.42
+(defined in RFC4519); *OID:* 2.5.4.42
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
-From RFC4519 description:\"The \'givenName\' attribute type contains
-name strings that are the part of a person\'s name that is not their
-surname. Each string is one value of this multi-valued attribute.\"
+From RFC4519 description:"The 'givenName' attribute type contains
+name strings that are the part of a person's name that is not their
+surname. Each string is one value of this multi-valued attribute."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 givenName: Stephen
 
 ## 3.7. homePhone
-(defined in RFC4524); *OID:*0.9.2342.19200300.100.1.20
+(defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.20
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC1274 description: \"The \[homePhone\] attribute type specifies a
-home telephone number associated with a person.\"
+From RFC1274 description: "The [homePhone] attribute type specifies a
+home telephone number associated with a person."
 
-*Notes *
+*Notes*
 
 Attribute values should comply with the international format specified
-in ITU Recommendation E.123: e.g., \"+44 71 123 4567.\"
+in ITU Recommendation E.123: e.g., "+44 71 123 4567."
 
 In RFC1274, this was originally called homeTelephoneNumber.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 homePhone: +1 608 555 1212
 
 ## 3.8. homePostalAddress
-(defined in RFC4524); *OID:*0.9.2342.19200300.100.1.39
+(defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.39
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC1274 description: \"The Home postal address attribute type
+From RFC1274 description: "The Home postal address attribute type
 specifies a home postal address for an object. This should be limited to
-up to 6 lines of 30 characters each.\"
+up to 6 lines of 30 characters each."
 
-*Semantics *
+*Semantics*
 
 Home address. OrgPerson has a PostalAddress that complements this
 attribute.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
-homePostalAddress: 1212 Como Ave.\$Midton, SD 45621\$USA
+homePostalAddress: 1212 Como Ave.$Midton, SD 45621$USA
 
 ## 3.9. initials
-(defined in RFC4519); *OID:*2.5.4.43
+(defined in RFC4519); *OID:* 2.5.4.43
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC4519 description: \"The \'initials\' attribute type contains
-strings of initials of some or all of an individual\'s names, except the
-surname(s). Each string is one value of this multi-valued attribute.\"
+From RFC4519 description: "The 'initials' attribute type contains
+strings of initials of some or all of an individual's names, except the
+surname(s). Each string is one value of this multi-valued attribute."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 initials: f x
 
 ## 3.10. jpegPhoto
-(defined in RFC2798); *OID:*0.9.2342.19200300.100.1.60
+(defined in RFC2798); *OID:* 0.9.2342.19200300.100.1.60
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-Follow inetOrgPerson definition of RFC2798: \"Used to store one or more
-images of a person using the JPEG File Interchange Format \[JFIF\].\"
+Follow inetOrgPerson definition of RFC2798: "Used to store one or more
+images of a person using the JPEG File Interchange Format [JFIF]."
 
-*Semantics *
+*Semantics*
 
 A smallish photo in jpeg format.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
 ## 3.11. l (localityName)
-(defined in RFC4519); *OID:*2.5.4.7
+(defined in RFC4519); *OID:* 2.5.4.7
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
 locality name.
 
-According to RFC4519, \"The \'l\' (\'localityName\' in X.500) attribute
+According to RFC4519, "The 'l' ('localityName' in X.500) attribute
 type contains names of a locality or place, such as a city, county, or
 other geographic region. Each name is one value of this multi-valued
-attribute.\"
+attribute."
 
-X.520(2000) reads: \"The Locality Name attribute type specifies a
+X.520(2000) reads: "The Locality Name attribute type specifies a
 locality. When used as a component of a directory name, it identifies a
 geographical area or locality in which the named object is physically
-located or with which it is associated in some other important way.\"
+located or with which it is associated in some other important way."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 l: Hudson Valley
 
 ## 3.12. labeledURI
-(defined in RFC2798); *OID:*1.3.6.1.4.1.250.1.57
+(defined in RFC2798); *OID:* 1.3.6.1.4.1.250.1.57
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-Follow inetOrgPerson definition of RFC2079: \"Uniform Resource
-Identifier with optional label.\"
+Follow inetOrgPerson definition of RFC2079: "Uniform Resource
+Identifier with optional label."
 
-*Notes *
+*Notes*
 
 Commonly a URL for a web site associated with this person. Good
 candidate for a self-maintained attribute. Note, however, that the
 vocabulary for the label portion of the value is not standardized.
 
-Note from RFC2079: \"The labeledURI attribute type has the
+Note from RFC2079: "The labeledURI attribute type has the
 caseExactString syntax (since URIs are case-sensitive) and it is
 multivalued. Values placed in the attribute should consist of a URI (at
 the present time, a URL) optionally followed by one or more space
@@ -1540,9 +1546,9 @@ caseExactString syntax, but that the use of non-IA5 (non-ASCII)
 characters is discouraged as not all directory clients may handle them
 in the same manner. If non-IA5 characters are included, they should be
 represented using the X.500 conventions, not the HTML conventions (e.g.,
-the character that is an \"a\" with a ring above it should be encoded
-using the T.61 sequence 0xCA followed by an \"a\" character; do not use
-the HTML escape sequence \"&aring\").
+the character that is an "a" with a ring above it should be encoded
+using the T.61 sequence 0xCA followed by an "a" character; do not use
+the HTML escape sequence "&aring").
 
 Examples of labeledURI Attribute Values
 
@@ -1553,41 +1559,41 @@ ftp://ds.internic.net/rfc/rfc822.txt
 
 An example of a labeledURI attribute value that contains a tilde
 character in the URL (special characters in a URL must be encoded as
-specified by the URL document \[1\]). The label is \"LDAP Home Page\":
+specified by the URL document [1]). The label is "LDAP Home Page":
 
 http://www.umich.edu/%7Ersug/ldap/ LDAP Home Page
 
 Another example. This one includes a hint in the label to help the user
 realize that the URL points to a photo image.
 
-http://champagne.inria.fr/Unites/rennes.gif Rennes \[photo\]
+http://champagne.inria.fr/Unites/rennes.gif Rennes [photo]
 
-*Semantics *
+*Semantics*
 
 Most commonly a URL for a web site associated with this person
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
-labeledURI: http://www.hsww.wiz/%7Eputter Harry\'s home page
+labeledURI: http://www.hsww.wiz/%7Eputter Harry's home page
 
 ## 3.13. mail
-(defined in RFC4524); *OID:*0.9.2342.19200300.100.1.3
+(defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.3
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
-From RFC4524: The \'mail\' (rfc822mailbox) attribute type holds Internet
-mail addresses in Mailbox \[RFC2821\] form (e.g., user\@example.com).
+From RFC4524: The 'mail' (rfc822mailbox) attribute type holds Internet
+mail addresses in Mailbox [RFC2821] form (e.g., user@example.com).
 
-*Notes *
+*Notes*
 
-Preferred address for the \"to:\" field of email to be sent to this
-person. Usually of the form localid\@univ.edu. Though multi-valued,
+Preferred address for the "to:" field of email to be sent to this
+person. Usually of the form localid@univ.edu. Though multi-valued,
 there is often only one value.
 
 Some mail clients will not display entries unless the mail attribute is
@@ -1595,298 +1601,298 @@ populated. See the LDAP Recipe for further guidance on email addresses,
 routing, etc.
 (<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>).
 
-*Semantics *
+*Semantics*
 
-Preferred address for the \"to:\" field of email to be sent to this
+Preferred address for the "to:" field of email to be sent to this
 person.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages, email client
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
-mail: dumbledore\@hsww.wiz
+mail: dumbledore@hsww.wiz
 
 ## 3.14. manager
-(defined in RFC4524); *OID:*0.9.2342.19200300.100.1.10
+(defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.10
 
-*Application utility class:*no recommendation; *\# of values: *multi
+*Application utility class:*no recommendation; *# of values:* multi
 
 *Definition*
 
-From RFC4524: \"The \'manager\' attribute specifies managers, by
+From RFC4524: "The 'manager' attribute specifies managers, by
 distinguished name, of the person (or entity).
 
-*Notes *
+*Notes*
 
 This attribute carries the DN of the manager of the person represented
 in this entry.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 manager: uid=twilliams, ou=people, dc=hobart, dc=edu
 
 ## 3.15. mobile
-(defined in RFC4524); *OID:*0.9.2342.19200300.100.1.41
+(defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.41
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC4524: \"The \'mobile\' (mobileTelephoneNumber) attribute
-specifies mobile telephone numbers (e.g., \"+1 775 555 6789\")
-associated with a person (or entity).\"
+From RFC4524: "The 'mobile' (mobileTelephoneNumber) attribute
+specifies mobile telephone numbers (e.g., "+1 775 555 6789")
+associated with a person (or entity)."
 
-*Notes *
+*Notes*
 
 cellular or mobile phone number. Attribute values should comply with the
-international format specified in ITU Recommendation E.123: e.g., \"+44
-71 123 4567.\"
+international format specified in ITU Recommendation E.123: e.g., "+44
+71 123 4567."
 
-*Semantics *
+*Semantics*
 
 cellular or mobile phone number.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 mobile: +47 22 44 66 88
 
 ## 3.16. o (organizationName)
-(defined in RFC4519); *OID:*2.5.4.10
+(defined in RFC4519); *OID:* 2.5.4.10
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
 Standard name of the top-level organization (institution) with which
 this person is associated.
 
-*Notes *
+*Notes*
 
 Likely only one value.
 
 Meant to carry the TOP-LEVEL organization name. Do not use this
 attribute to carry school college names.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 o: St. Cloud State
 
 ## 3.17. ou (organizationalUnitName)
-(defined in RFC4519); *OID:*2.5.4.11
+(defined in RFC4519); *OID:* 2.5.4.11
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
-Organizational unit(s). According to X.520(2000), \"The Organizational
+Organizational unit(s). According to X.520(2000), "The Organizational
 Unit Name attribute type specifies an organizational unit. When used as
 a component of a directory name it identifies an organizational unit
 with which the named object is affiliated.
 
 The designated organizational unit is understood to be part of an
-organization designated by an OrganizationName \[o\] attribute. It
+organization designated by an OrganizationName [o] attribute. It
 follows that if an Organizational Unit Name attribute is used in a
-directory name, it must be associated with an OrganizationName \[o\]
+directory name, it must be associated with an OrganizationName [o]
 attribute.
 
 An attribute value for Organizational Unit Name is a string chosen by
-the organization of which it is a part.\"
+the organization of which it is a part."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 ou: Faculty Senate
 
 ## 3.18. pager
-(defined in RFC4524); *OID:*0.9.2342.19200300.100.1.42
+(defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.42
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC4524: \"The \'pager\' (pagerTelephoneNumber) attribute specifies
-pager telephone numbers (e.g., \"+1 775 555 5555\") for an object.\"
+From RFC4524: "The 'pager' (pagerTelephoneNumber) attribute specifies
+pager telephone numbers (e.g., "+1 775 555 5555") for an object."
 
-*Notes *
+*Notes*
 
 Attribute values should comply with the international format specified
-in ITU Recommendation E.123: e.g., \"+44 71 123 4567.\"
+in ITU Recommendation E.123: e.g., "+44 71 123 4567."
 
-*Semantics *
+*Semantics*
 
 pager number.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 pager: +1 202 555 4321
 
 ## 3.19. postalAddress
-(RFC4519); *OID:*2.5.4.16
+(RFC4519); *OID:* 2.5.4.16
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
 Campus or office address. inetOrgPerson has a homePostalAddress that
-complements this attribute. X.520(2000) reads: \"The Postal Address
+complements this attribute. X.520(2000) reads: "The Postal Address
 attribute type specifies the address information required for the
-physical postal delivery to an object.\"
+physical postal delivery to an object."
 
-*Notes *
+*Notes*
 
 Campus or office address. inetOrgPerson has a homePostalAddress that
 complements this attribute.
 
-*Semantics *
+*Semantics*
 
-Campus or office address. X.520(2000) reads: \"The Postal Address
+Campus or office address. X.520(2000) reads: "The Postal Address
 attribute type specifies the address information required for the
-physical postal delivery to an object.\"
+physical postal delivery to an object."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
-postalAddress: P.O. Box 333\$Whoville, WH 99999\$USA
+postalAddress: P.O. Box 333$Whoville, WH 99999$USA
 
 ## 3.20. postalCode
-(RFC4519); *OID:*2.5.4.17
+(RFC4519); *OID:* 2.5.4.17
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-Follow X.500(2001): \"The postal code attribute type specifies the
+Follow X.500(2001): "The postal code attribute type specifies the
 postal code of the named object. If this attribute
 
-value is present, it will be part of the object\'s postal address.\"
+value is present, it will be part of the object's postal address."
 Zipcode in USA, postal code for other countries.
 
-*Notes *
+*Notes*
 
 ZIP code in USA, postal code for other countries.
 
-*Semantics *
+*Semantics*
 
 Zip code in USA, postal code for other countries.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 postalCode: 54321
 
 ## 3.21. postOfficeBox
-(RFC4519); *OID:*2.5.4.18
+(RFC4519); *OID:* 2.5.4.18
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC4519: \"The \'postOfficeBox\' attribute type contains postal box
+From RFC4519: "The 'postOfficeBox' attribute type contains postal box
 identifiers that a Postal Service uses when a customer arranges to
 receive mail at a box on the premises of the Postal Service. Each postal
-box identifier is a single value of this multi-valued attribute.\"
+box identifier is a single value of this multi-valued attribute."
 
-*Notes Example applications for which this attribute would be useful *
+*Notes Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 postOfficeBox: 109260
 
 ## 3.22. preferredLanguage
 (format for a language specification defined in RFC2069, attribute defined in
-RFC2798); *OID:*2.16.840.1.113730.3.1.39
+RFC2798); *OID:* 2.16.840.1.113730.3.1.39
 
-*Application utility class:*extended; *\# of values: *single
+*Application utility class:* extended; *# of values:* single
 
 *Definition*
 
-Follow inetOrgPerson definition of RFC2798: \"preferred written or
-spoken language for a person.\"
+Follow inetOrgPerson definition of RFC2798: "preferred written or
+spoken language for a person."
 
-*Permissible values (if controlled) *
+*Permissible values (if controlled)*
 
 See RFC2068 and ISO 639 for allowable values in this field. Esperanto,
 for example is EO in ISO 639, and
 
 RFC2068 would allow a value of en-US for US English.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 preferredLanguage: EO
 
 ## 3.23. seeAlso
-(RFC4519); *OID:*2.5.4.34
+(RFC4519); *OID:* 2.5.4.34
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
-From RFC4519: The \'seeAlso\' attribute type contains the distinguished
+From RFC4519: The 'seeAlso' attribute type contains the distinguished
 names of objects that are related to the subject object. Each related
-object name is one value of this multi-valued attribute.\"
+object name is one value of this multi-valued attribute."
 
-*Semantics *
+*Semantics*
 
 The distinguished name of another directory entry.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 seeAlso: cn=Department Chair, ou=physics, o=University of Technology,
 dc=utech, dc=ac, dc=uk
 
 ## 3.24. sn (surname)
-(RFC4519); *OID:*2.5.4.4
+(RFC4519); *OID:* 2.5.4.4
 
-*Application utility class:*core; *\# of values: *multi
+*Application utility class:* core; *# of values:* multi
 
 *Definition*
 
-Surname or family name. From RFC4519: \"The \'sn\' (\'surname\' in
+Surname or family name. From RFC4519: "The 'sn' ('surname' in
 X.500) attribute type contains name strings for the family names of a
-person. Each string is one value of this multi-valued attribute.\"
+person. Each string is one value of this multi-valued attribute."
 
-*Notes *
+*Notes*
 
 Required. One of the two required attributes in the person object class
 from which eduPerson derives (the other is cn). As such it is one of
-eduPerson\'s three \"core application utility\" attributes. The third is
+eduPerson's three "core application utility" attributes. The third is
 eduPersonOrgDN.
 
 If the person has a multi-part surname (whether hyphenated or not),
@@ -1895,20 +1901,20 @@ component of a hyphenated surname as a separate value in this
 multi-valued attribute. That yields the best results for the broadest
 range of clients doing name searches.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 all
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 sn: Carson-Smith\
 sn: Carson\
 sn: Smith
 
 ## 3.25. st (stateOrProvinceName)
-(RFC4519); *OID:*2.5.4.8
+(RFC4519); *OID:* 2.5.4.8
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
@@ -1918,229 +1924,229 @@ Format: The values should be coordinated on a national level. If
 well-known shortcuts exist, like the two-letter state abbreviations in
 the US, these abbreviations are preferred over longer full names.
 
-From RFC4519: \"The \'st\' (\'stateOrProvinceName\' in X.500) attribute
+From RFC4519: "The 'st' ('stateOrProvinceName' in X.500) attribute
 type contains the full names of states or provinces. Each name is one
-value of this multi-valued attribute.\"
+value of this multi-valued attribute."
 
 *Permissible values~~(if controlled)~~*
 
 For states in the United States, U.S. Postal Service set of two-letter
 state name abbreviations.
 
-*Notes *
+*Notes*
 
-State or province name. While RFC4519 specifies use of the \"full
-name,\" it is customary to use the U.S. Postal Service set of two-letter
+State or province name. While RFC4519 specifies use of the "full
+name," it is customary to use the U.S. Postal Service set of two-letter
 state name abbreviations for states in the U.S. and, as noted in the
 definition, other nationally coordinated official abbreviations are
 preferred for province names.
 
-*Semantics *
+*Semantics*
 
 Standard two-letter abbreviations for U.S. state names, other
 standards-based abbreviations for provinces where available.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 st: IL
 
 ## 3.26. street
-(RFC4519); *OID:*2.5.4.9
+(RFC4519); *OID:* 2.5.4.9
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC4519: \"The \'street\' (\'streetAddress\' in X.500) attribute
+From RFC4519: "The 'street' ('streetAddress' in X.500) attribute
 type contains site information from a postal address (i.e., the street
 name, place, avenue, and the house number). Each street is one value of
-this multi-valued attribute.\"
+this multi-valued attribute."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 street: 303 Mulberry St.
 
 ## 3.27. telephoneNumber
-(RFC4519); *OID:*2.5.4.20
+(RFC4519); *OID:* 2.5.4.20
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
 Office/campus phone number. Attribute values should comply with the
-international format specified in ITU Recommendation E.123: e.g., \"+44
-71 123 4567.\"
+international format specified in ITU Recommendation E.123: e.g., "+44
+71 123 4567."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 telephoneNumber: +1 212 555 1234
 
 ## 3.28. title
-(RFC4519); *OID:*2.5.4.12
+(RFC4519); *OID:* 2.5.4.12
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-From RFC4519: \"The \'title\' attribute type contains the title of a
+From RFC4519: "The 'title' attribute type contains the title of a
 person in their organizational context. Each title is one value of this
-multi-valued attribute.\"
+multi-valued attribute."
 
-*Notes *
+*Notes*
 
 No controlled vocabulary, may contain anything.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 white pages
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 title: Assistant Vice-Deputy for Redundancy Reduction
 
 ## 3.29. uid
-(RFC4519); *OID:*0.9.2342.19200300.100.1.1
+(RFC4519); *OID:* 0.9.2342.19200300.100.1.1
 
-*Application utility class:*standard; *\# of values: *multi
+*Application utility class:*standard; *# of values:* multi
 
 *Definition*
 
-From RFC4519: \"The \'uid\' (\'userid\' in RFC1274) attribute type
+From RFC4519: "The 'uid' ('userid' in RFC1274) attribute type
 contains computer system login names associated with the object. Each
-name is one value of this multi-valued attribute.\"
+name is one value of this multi-valued attribute."
 
-*Notes *
+*Notes*
 
-Likely only one value. See the extensive discussion in the \"LDAP
-Recipe\" (<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>).
+Likely only one value. See the extensive discussion in the "LDAP
+Recipe" (<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>).
 
 A number of off-the-shelf directory-enabled applications make use of
 this inetOrgPerson attribute, not always consistently.
 
-RFC1274 uses the longer name \'userid\'.
+RFC1274 uses the longer name 'userid'.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 controlling access to resources
 
-*Example (LDIF Fragment) *
+*Example (LDIF Fragment)*
 
 uid: gmettes
 
 ## 3.30. uniqueIdentifier
-(RFC4524); *OID:*0.9.2342.19200300.100.1.44
+(RFC4524); *OID:* 0.9.2342.19200300.100.1.44
 
-*Application utility class:*no recommendation; *\# of values: *
+*Application utility class:*no recommendation; *# of values: *
 
 *Definition*
 
-From RFC4524: \"The \'uniqueIdentifier\' attribute specifies a unique
+From RFC4524: "The 'uniqueIdentifier' attribute specifies a unique
 identifier for an object represented in the Directory. The domain within
 which the identifier is unique and the exact semantics of the identifier
 are for local definition. For a person, this might be an institution-
 wide payroll number. For an organizational unit, it might be a
-department code.\"
+department code."
 
-*Notes *
+*Notes*
 
 Avoid. UniqueIdentifier should not be reused because RFC4524 states
-\"The domain within which the identifier is unique and the exact
-semantics of the identifier are for local definition.\"
+"The domain within which the identifier is unique and the exact
+semantics of the identifier are for local definition."
 
 ## 3.31. userCertificate
-(RFC4523); *OID:*2.5.4.36
+(RFC4523); *OID:* 2.5.4.36
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-A user\'s X.509 certificate
+A user's X.509 certificate
 
-*Notes *
+*Notes*
 
 RFC2256 states that this attribute is to be stored and requested in the
-binary form, as \'userCertificate;binary.\'
+binary form, as 'userCertificate;binary.'
 
 Note that userSMIMECertificate is in binary syntax
 (1.3.6.1.4.1.1466.115.121.1.5) whereas the userCertificate attribute is
 in certificate syntax (1.3.6.1.4.1.1466.115.121.1.8).
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 email clients, controlling access to resources
 
 ## 3.32. userPassword
-(RFC4519); *OID:*2.5.4.35
+(RFC4519); *OID:* 2.5.4.35
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
-This attribute identifies the entry\'s password and encryption method in
+This attribute identifies the entry's password and encryption method in
 the following format:
 
 {encryption method}encrypted password.
 
-*Notes *
+*Notes*
 
 The user pw is hidden, and is used in the bind operation in LDAP. The
 bind operation must be done over SSL to avoid sending clear text
 passwords over the wire or through the air.
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 controlling access to resources
 
 ## 3.33. userSMIMECertificate
-(RFC2798); *OID:*2.16.840.1.113730.3.1.40
+(RFC2798); *OID:* 2.16.840.1.113730.3.1.40
 
-*Application utility class:*extended; *\# of values: *multi
+*Application utility class:* extended; *# of values:* multi
 
 *Definition*
 
 An X.509 certificate specifically for use in S/MIME applications (see
 RFCs 2632, 2633 and 2634).
 
-*Notes *
+*Notes*
 
 An X.509 certificate specifically for use in S/MIME applications.
-According to RFC2798, \"If available, this attribute is preferred over
-the userCertificate attribute for S/MIME applications.\"
+According to RFC2798, "If available, this attribute is preferred over
+the userCertificate attribute for S/MIME applications."
 
 RFC2798 states that this attribute is to be stored and requested in the
-binary form, as \'userSMIMECertificate;binary.\'
+binary form, as 'userSMIMECertificate;binary.'
 
-*Semantics *
+*Semantics*
 
-Following userSMIMECertificate in RFC2798, \"A PKCS\#7 \[RFC2315\]
-SignedData.\"
+Following userSMIMECertificate in RFC2798, "A PKCS\#7 [RFC2315]
+SignedData."
 
-*Example applications for which this attribute would be useful *
+*Example applications for which this attribute would be useful*
 
 email clients
 
 ## 3.34. x500uniqueIdentifier
-(RFC4519); *OID:*2.5.4.45
+(RFC4519); *OID:* 2.5.4.45
 
-*Application utility class:*no recommendation; *\# of values: *
+*Application utility class:*no recommendation; *# of values: *
 
 *Definition*
 
 Defined originally in X.509(96) and included in RFC2256.
 
-*Notes *
+*Notes*
 
 Avoid. X500UniqueIdentifier syntax is specified as bit string, and that
 is not likely to be a good fit for many of the institutional attribute
@@ -2154,80 +2160,80 @@ of eduPerson.
 The following list shows changes in version (202001) relative to version
 (201602).
 
--   1\. Section 1.2 \"Identifier Concepts\" updated.
+-   1\. Section 1.2 "Identifier Concepts" updated.
 
--   2\. Section 2.2.8 \"eduPersonPrincipalName\" Notes section revised.
+-   2\. Section 2.2.8 "eduPersonPrincipalName" Notes section revised.
 
--   3\. Section 2.2.11 \"eduPersonTargetedID\" deprecated.
+-   3\. Section 2.2.11 "eduPersonTargetedID" deprecated.
 
--   4\. Section 5 \"References\" links updated.
+-   4\. Section 5 "References" links updated.
 
 -   5\. Section 3.\* All RFCs verified.
 
 The following list shows changes in version (201602) relative to version
 (201310).
 
--   1\. Section 2.2.14 \"eduPersonOrcid\" added
+-   1\. Section 2.2.14 "eduPersonOrcid" added
 
 The following list shows changes in version (201310) relative to version
 (201203).
 
--   1\. Section 1.3 \"Scope\" revised due to additional scoped attributes
+-   1\. Section 1.3 "Scope" revised due to additional scoped attributes
 
--   2\. Section 2.1.1 \"eduPersonAffiliation\" definition of the \"member\"
+-   2\. Section 2.1.1 "eduPersonAffiliation" definition of the "member"
     affiliation clarified.
 
--   3\. Section 2.2.8 \"eduPersonPrincipalName\" Refined the definition of
-    \"scope\" and specified allowable characters in eduPersonPrincipalName
+-   3\. Section 2.2.8 "eduPersonPrincipalName" Refined the definition of
+    "scope" and specified allowable characters in eduPersonPrincipalName
     values
 
--   4\. Section 2.2.9 \"eduPersonPrincipalNamePrior\" added as a new
+-   4\. Section 2.2.9 "eduPersonPrincipalNamePrior" added as a new
     eduPerson attribute type
 
--   5\. Section 2.2.10 \"eduPersonScopedAffiliation\" Refined the definition
-    of \"scope\".
+-   5\. Section 2.2.10 "eduPersonScopedAffiliation" Refined the definition
+    of "scope".
 
--   6\. Section 2.2.13 \"eduPersonUniqueId\" added as a new eduPerson
+-   6\. Section 2.2.13 "eduPersonUniqueId" added as a new eduPerson
     attribute type
 
--   7\. Section 3.8 \"homePostalAddress\" example updated to include country
-    by appending \"\$USA\"
+-   7\. Section 3.8 "homePostalAddress" example updated to include country
+    by appending "$USA"
 
--   8\. Section 3.19 \"PostalAddress\" example updated to include country by
-    appending \"\$USA\"
+-   8\. Section 3.19 "PostalAddress" example updated to include country by
+    appending "$USA"
 
--   9\. Section 3.5 \"facsimileTelephoneNumber\" text updated to specify use
+-   9\. Section 3.5 "facsimileTelephoneNumber" text updated to specify use
     of international format
 
--   10\. Section 3.7 \"homePhone\" text updated to specify use of
+-   10\. Section 3.7 "homePhone" text updated to specify use of
     international format
 
--   11\. Section 3.15 \"mobile\" text updated to specify use of international
+-   11\. Section 3.15 "mobile" text updated to specify use of international
     format
 
--   12\. Section 3.18 \"pager\" text updated to specify use of international
+-   12\. Section 3.18 "pager" text updated to specify use of international
     format
 
--   13\. Section 3.27 \"telephoneNumber\" text updated to specify use of
+-   13\. Section 3.27 "telephoneNumber" text updated to specify use of
     international format
 
--   14\. Section 3.30 \"uniqueIdentifier\" reference updated
+-   14\. Section 3.30 "uniqueIdentifier" reference updated
 
--   15\. Section 5 \"References\" now include X.520.
+-   15\. Section 5 "References" now include X.520.
 
 The following list shows changes in version (201203) relative to version
 (200806).
 
--   1\. Section 2.2.1 \"eduPersonAffiliation\" text updated to clarify its
+-   1\. Section 2.2.1 "eduPersonAffiliation" text updated to clarify its
     definition and comment on its usage
 
--   2\. Section 2.2.6 \"eduPersonPrimaryAffiliation\" text updated to point
+-   2\. Section 2.2.6 "eduPersonPrimaryAffiliation" text updated to point
     to eduPersonAffiliation for detailed definitions
 
--   3\. Section 2.2.10 \"eduPersonTargetedID\" text updated to better
+-   3\. Section 2.2.10 "eduPersonTargetedID" text updated to better
     describe properties and uses of eduPersonTargetedID
 
--   4\. Section 2.2.8 \"eduPersonPrincipalName\" text significantly edited
+-   4\. Section 2.2.8 "eduPersonPrincipalName" text significantly edited
     and shortened to update content and to eliminate guidelines that are
     more properly defined by identity federations.
 
@@ -2239,8 +2245,8 @@ The following list shows changes in version (200806) relative to version
 -   2\. In section 1.1, removed paragraph explaining upgrade process from
     200312 to 200604.
 
--   3\. In section 1.2, removed reference to an \"upcoming MACE-Dir document
-    on information models\"
+-   3\. In section 1.2, removed reference to an "upcoming MACE-Dir document
+    on information models"
 
 -   4\. In section 2.1, restructured attribute list to one per line for
     improved readability and added attribute eduPersonAssurance
@@ -2248,51 +2254,51 @@ The following list shows changes in version (200806) relative to version
 -   5\. Add named anchors and linked Table of Contents. This is document
     enhancement, not a specification change.
 
--   6\. Added subsection 2.2.11 \"eduPersonAssurance\".
+-   6\. Added subsection 2.2.11 "eduPersonAssurance".
 
--   7\. In all subsections of 2.2, changed \"RFC2252 definition\" to
-    \"RFC4512 definition\".
+-   7\. In all subsections of 2.2, changed "RFC2252 definition" to
+    "RFC4512 definition".
 
--   8\. In section 2.2.5, changed reference from \"RFC2252\" to \"RFC4512\".
+-   8\. In section 2.2.5, changed reference from "RFC2252" to "RFC4512".
 
--   9\. In section 3.2, 3.3, changed reference from \"RFC2256\" to
-    \"RFC4519\" and updated text.
+-   9\. In section 3.2, 3.3, changed reference from "RFC2256" to
+    "RFC4519" and updated text.
 
 -   10\. In section 3.5, added reference to RFC4519 and updated text. Added
     notes section.
 
--   11\. In section 3.6, changed reference from \"RFC2798\" to \"RFC4519\"
+-   11\. In section 3.6, changed reference from "RFC2798" to "RFC4519"
     and updated text.
 
--   12\. In section 3.7, added note \"Attribute values should comply with the
-    ITU Recommendation E.123 \[E.123\]: i.e., \"+44 71 123 4567.\"\"
+-   12\. In section 3.7, added note "Attribute values should comply with the
+    ITU Recommendation E.123 [E.123]: i.e., "+44 71 123 4567.""
 
--   13\. In section 3.9, changed reference from \"RFC2798\" and \"RFC2256\"
-    to \"RFC4519\" and updated text.
+-   13\. In section 3.9, changed reference from "RFC2798" and "RFC2256"
+    to "RFC4519" and updated text.
 
--   14\. In section 3.11, changed reference from \"RFC2256\" to \"RFC4519\"
+-   14\. In section 3.11, changed reference from "RFC2256" to "RFC4519"
     and updated text.
 
--   15\. In section 3.13, changed reference from \"RFC2798\" to \"RFC4524\"
+-   15\. In section 3.13, changed reference from "RFC2798" to "RFC4524"
     and updated text.
 
--   16\. In section 3.13, changed wording of \"Likely to be only one value\"
-    to \"Though multi-valued, there is often only one value.\"
+-   16\. In section 3.13, changed wording of "Likely to be only one value"
+    to "Though multi-valued, there is often only one value."
 
 -   17\. In section 3.13, updated location of the LDAP Recipe from
-    \"<http://www.duke.edu/~gettes/giia/ldap-recipe>\" to
-    \"<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>\".
+    "<http://www.duke.edu/~gettes/giia/ldap-recipe>" to
+    "<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>".
 
 -   18\. In section 3.13, removed notation about RFC1274 and rfc822Mailbox
 
--   19\. In section 3.14, 3.15, changed reference from \"RFC2798\" to
-    \"RFC4524\" and updated text.
+-   19\. In section 3.14, 3.15, changed reference from "RFC2798" to
+    "RFC4524" and updated text.
 
 -   20\. In section 3.15, removed notation regarding RFC1274. Added note
-    \"Attribute values should comply with the ITU Recommendation E.123
-    \[E.123\]: i.e., \"+44 71 123 4567.\"\"
+    "Attribute values should comply with the ITU Recommendation E.123
+    [E.123]: i.e., "+44 71 123 4567.""
 
--   21\. In section 3.18, changed reference from \"RFC2798\" to \"RFC4524\"
+-   21\. In section 3.18, changed reference from "RFC2798" to "RFC4524"
     and updated text. Removed notation regarding RFC1274. Added notation
     that ITU Recommendation E.123 should be used.
 
@@ -2309,19 +2315,19 @@ The following list shows changes in version (200806) relative to version
     updated text.
 
 -   27\. In section 3.27, changed international format recommendation to
-    \"Attribute values should comply with the ITU Recommendation E.123
-    \[E.123\]: i.e., \"+44 71 123 4567.\"\".
+    "Attribute values should comply with the ITU Recommendation E.123
+    [E.123]: i.e., "+44 71 123 4567."".
 
 -   28\. In section 3.28, added reference to RFC4519 and updated text.
 
--   29\. In section 3.29, changed reference from \"RFC2798\" to \"RFC4519\"
+-   29\. In section 3.29, changed reference from "RFC2798" to "RFC4519"
     and update text.
 
 -   30\. In section 3.29, updated location of the LDAP Recipe from
-    \"<http://www.duke.edu/~gettes/giia/ldap-recipe>\" to
-    \"<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>\".
+    "<http://www.duke.edu/~gettes/giia/ldap-recipe>" to
+    "<http://middleware.internet2.edu/dir/docs/ldap-recipe.htm>".
 
--   31\. In section 3.30, changed reference from \"RFC1274\" to \"RFC4524\"
+-   31\. In section 3.30, changed reference from "RFC1274" to "RFC4524"
     and updated text.
 
 -   32\. In section 3.32, added reference to RFC4519. Text was not updated
@@ -2333,28 +2339,28 @@ The following list shows changes in version (200806) relative to version
 -   34\. In section 2.2.2 change EQUALITY caseIgnoreMatch to caseExactMatch,
     matching the eduPerson LDIF.
 
--   35\. In sections 2.2.2 and 2.2.4 specify indexing as \"No
-    recommendation\". No indexing recommendation has ever been specified for
+-   35\. In sections 2.2.2 and 2.2.4 specify indexing as "No
+    recommendation". No indexing recommendation has ever been specified for
     these attributes, this language is just for clarification. 
 
 The following list shows changes in version (200712) relative to version
 (200604).
 
--   1\. In section 2.2.1, \"eduPersonAffiliation\" and section 2.2.6,
-    \"eduPersonPrimaryAffiliation,\" added \"library-walk-in\"
+-   1\. In section 2.2.1, "eduPersonAffiliation" and section 2.2.6,
+    "eduPersonPrimaryAffiliation," added "library-walk-in"
     to *Permissible values*
 
--   2\. In section 2.2.1, \"eduPersonAffiliation\" and section 2.2.6,
-    \"eduPersonPrimaryAffiliation,\" added the new paragraph explaining
-    \"library-walk-in.\"
+-   2\. In section 2.2.1, "eduPersonAffiliation" and section 2.2.6,
+    "eduPersonPrimaryAffiliation," added the new paragraph explaining
+    "library-walk-in."
 
 The following list shows changes in version (200604) relative to version
 (200312).
 
 -   1\. Definition of eduPersonPrincipalName and eduPersonScopedAffiliation
-    modified. A \"first match from the left\" rule is invoked such that the
+    modified. A "first match from the left" rule is invoked such that the
     two components are the substrings found on either side of the first
-    \"@\" sign.
+    "@" sign.
 
 -   2\. Definition of eduPersonTargetedID revised to align with current
     recommended practice in Shibboleth applications.
@@ -2375,7 +2381,7 @@ The following list shows changes in version (200312) relative to version
     introductory note, corresponding edits in the eduPersonTargetedID
     section.
 
--   6\. Recommendation on the \"sn\" attribute amended to suggest including
+-   6\. Recommendation on the "sn" attribute amended to suggest including
     the whole surname as well as the components in cases of hyphenated
     surnames.
 
@@ -2447,7 +2453,7 @@ definition and version 200210.
 MACE members and others who contributed many hours to the definition of
 this object class include Rob Banz, Tom Barton, Brendan Bellina, Scott
 Cantor, Steven Carmody, Michael Gettes, Paul Hill, Ken Klingenstein, RL
-\"Bob\" Morgan (RIP), Todd Piket, David Wasley, Ann West, Ignacio
+"Bob" Morgan (RIP), Todd Piket, David Wasley, Ann West, Ignacio
 Coupeau, Leif Johannson, Hallvard Furuseth, Diego Lopez, Roland Hedberg,
 Ingrid Melve, Alistair Young, Peter Gietz, Mark Jones, Nathan Dors, Tom
 Scavo, Lynn McRae, Chad La Joie, Katheryn Strojny, Kathryn Huxtable,
