@@ -46,36 +46,37 @@ a production enterprise directory service environment.
     - [2.2.13. eduPersonUniqueId](#2213-edupersonuniqueid)
     - [2.2.14. eduPersonOrcid](#2214-edupersonorcid)
 - [3. Comments on Other Common Person Attributes](#3-comments-on-other-common-person-attributes)
-  - [3.1. audio ](#31-audio-)
-  - [3.2. cn ](#32-cn-)
+  - [3.1. audio](#31-audio)
+  - [3.2. cn (commonName)](#32-cn-commonname)
   - [3.3. description](#33-description)
-  - [3.4. displayName ](#34-displayname-)
+  - [3.4. displayName](#34-displayname)
   - [3.5. facsimileTelephoneNumber](#35-facsimiletelephonenumber)
-  - [3.6. givenName ](#36-givenname-)
-  - [3.7. homePhone ](#37-homephone-)
-  - [3.8. homePostalAddress ](#38-homepostaladdress-)
-  - [3.9. initials ](#39-initials-)
+  - [3.6. givenName](#36-givenname)
+  - [3.7. homePhone](#37-homephone)
+  - [3.8. homePostalAddress](#38-homepostaladdress)
+  - [3.9. initials](#39-initials)
   - [3.10. jpegPhoto](#310-jpegphoto)
-  - [3.12. labeledURI ](#312-labeleduri-)
+  - [3.11. l (localityName)](#311-l-localityName)
+  - [3.12. labeledURI](#312-labeleduri)
   - [3.13. mail](#313-mail)
   - [3.14. manager](#314-manager)
-  - [3.15. mobile ](#315-mobile-)
-  - [3.16. o](#316-o)
-  - [3.17. ou](#317-ou)
+  - [3.15. mobile](#315-mobile)
+  - [3.16. o (organizationName)](#316-o-organizationname)
+  - [3.17. ou (organizationUnitName)](#317-ou-organizationunitname)
   - [3.18. pager](#318-pager)
   - [3.19. postalAddress](#319-postaladdress)
   - [3.20. postalCode](#320-postalcode)
   - [3.21. postOfficeBox](#321-postofficebox)
   - [3.22. preferredLanguage](#322-preferredlanguage)
   - [3.23. seeAlso](#323-seealso)
-  - [3.24. sn](#324-sn)
-  - [3.25. st](#325-st)
+  - [3.24. sn (surname)](#324-sn-surname)
+  - [3.25. st (stateOrProvinceName)](#325-st-stateorprovincename)
   - [3.26. street](#326-street)
   - [3.27. telephoneNumber](#327-telephonenumber)
   - [3.28. title](#328-title)
   - [3.29. uid](#329-uid)
   - [3.30. uniqueIdentifier](#330-uniqueidentifier)
-  - [3.31. userCertificate ](#331-usercertificate-)
+  - [3.31. userCertificate](#331-usercertificate)
   - [3.32. userPassword](#332-userpassword)
   - [3.33. userSMIMECertificate](#333-usersmimecertificate)
   - [3.34. x500uniqueIdentifier](#334-x500uniqueidentifier)
@@ -219,21 +220,22 @@ All eduPerson-defined attribute names are prefaced with \"eduPerson.\"
 The eduPerson auxiliary object class contains all of them as \"MAY\"
 attributes:
 
-```( 1.3.6.1.4.1.5923.1.1.2
-        NAME \'eduPerson\'
+```
+( 1.3.6.1.4.1.5923.1.1.2
+        NAME 'eduPerson'
         AUXILIARY
-        MAY ( eduPersonAffiliation \$ 
-                    eduPersonNickname \$
-                    eduPersonOrgDN \$
-                    eduPersonOrgUnitDN \$
-                    eduPersonPrimaryAffiliation \$
-                    eduPersonPrincipalName \$
-                    eduPersonEntitlement \$
-                    eduPersonPrimaryOrgUnitDN \$
-                    eduPersonScopedAffiliation \$
-                    eduPersonTargetedID \$
-                    eduPersonAssurance \$
-                    eduPersonPrincipalNamePrior \$
+        MAY ( eduPersonAffiliation $ 
+                    eduPersonNickname $
+                    eduPersonOrgDN $
+                    eduPersonOrgUnitDN $
+                    eduPersonPrimaryAffiliation $
+                    eduPersonPrincipalName $
+                    eduPersonEntitlement $
+                    eduPersonPrimaryOrgUnitDN $
+                    eduPersonScopedAffiliation $
+                    eduPersonTargetedID $
+                    eduPersonAssurance $
+                    eduPersonPrincipalNamePrior $
                     eduPersonUniqueId )
                     eduPersonOrcid )
 )
@@ -252,10 +254,10 @@ defined.
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.1
-          NAME \'eduPersonAffiliation\'
-          DESC \'eduPerson per Internet2 and EDUCAUSE\'
+          NAME 'eduPersonAffiliation'
+          DESC 'eduPerson per Internet2 and EDUCAUSE'
           EQUALITY caseIgnoreMatch
-          SYNTAX \'1.3.6.1.4.1.1466.115.121.1.15\' )
+          SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
 *Application utility class:*standard; *\# of values: *multi
@@ -1238,7 +1240,7 @@ that some comment was needed to clarify the meaning or utility of an
 attribute, it can be found here. For details on the syntax and other
 aspects of these attributes, see the appropriate standards documents.
 
-## 3.1. audio 
+## 3.1. audio
 (defined in RFC2798); *OID:*0.9.2342.19200300.100.1.55
 
 *Application utility class:*no recommendation;
@@ -1252,8 +1254,8 @@ only.
 
 Avoid. Not clearly defined, no de facto standard.
 
-## 3.2. cn 
-(commonName), (defined in RFC4519, included in \'person\'); *OID:*2.5.4.3
+## 3.2. cn (commonName)
+(defined in RFC4519, included in \'person\'); *OID:*2.5.4.3
 
 *Application utility class:*core; *\# of values: *multi
 
@@ -1314,7 +1316,7 @@ white pages
 
 description: A jolly good felon
 
-## 3.4. displayName 
+## 3.4. displayName
 (defined in RFC2798); *OID:*2.16.840.1.113730.3.1.241
 
 *Application utility class:*standard; *\# of values: *single
@@ -1370,7 +1372,7 @@ white pages
 
 facsimileTelephoneNumber: +44 71 123 4567
 
-## 3.6. givenName 
+## 3.6. givenName
 (defined in RFC4519); *OID:*2.5.4.42
 
 *Application utility class:*standard; *\# of values: *multi
@@ -1387,7 +1389,7 @@ surname. Each string is one value of this multi-valued attribute.\"
 
 givenName: Stephen
 
-## 3.7. homePhone 
+## 3.7. homePhone
 (defined in RFC4524); *OID:*0.9.2342.19200300.100.1.20
 
 *Application utility class:*extended; *\# of values: *multi
@@ -1412,7 +1414,7 @@ white pages
 
 homePhone: +1 608 555 1212
 
-## 3.8. homePostalAddress 
+## 3.8. homePostalAddress
 (defined in RFC4524); *OID:*0.9.2342.19200300.100.1.39
 
 *Application utility class:*extended; *\# of values: *multi
@@ -1436,7 +1438,7 @@ white pages
 
 homePostalAddress: 1212 Como Ave.\$Midton, SD 45621\$USA
 
-## 3.9. initials 
+## 3.9. initials
 (defined in RFC4519); *OID:*2.5.4.43
 
 *Application utility class:*extended; *\# of values: *multi
@@ -1471,8 +1473,8 @@ A smallish photo in jpeg format.
 
 white pages
 
-##3.11. l 
-(localityName), (defined in RFC4519); *OID:*2.5.4.7
+## 3.11. l (localityName)
+(defined in RFC4519); *OID:*2.5.4.7
 
 *Application utility class:*extended; *\# of values: *multi
 
@@ -1498,7 +1500,7 @@ white pages
 
 l: Hudson Valley
 
-## 3.12. labeledURI 
+## 3.12. labeledURI
 (defined in RFC2798); *OID:*1.3.6.1.4.1.250.1.57
 
 *Application utility class:*extended; *\# of values: *multi
@@ -1629,7 +1631,7 @@ white pages
 
 manager: uid=twilliams, ou=people, dc=hobart, dc=edu
 
-## 3.15. mobile 
+## 3.15. mobile
 (defined in RFC4524); *OID:*0.9.2342.19200300.100.1.41
 
 *Application utility class:*extended; *\# of values: *multi
@@ -1658,8 +1660,8 @@ white pages
 
 mobile: +47 22 44 66 88
 
-## 3.16. o
-(organizationName), (defined in RFC4519); *OID:*2.5.4.10
+## 3.16. o (organizationName)
+(defined in RFC4519); *OID:*2.5.4.10
 
 *Application utility class:*standard; *\# of values: *multi
 
@@ -1683,8 +1685,8 @@ white pages
 
 o: St. Cloud State
 
-## 3.17. ou
-(organizationalUnitName), (defined in RFC4519); *OID:*2.5.4.11
+## 3.17. ou (organizationalUnitName)
+(defined in RFC4519); *OID:*2.5.4.11
 
 *Application utility class:*standard; *\# of values: *multi
 
@@ -1869,8 +1871,8 @@ white pages
 seeAlso: cn=Department Chair, ou=physics, o=University of Technology,
 dc=utech, dc=ac, dc=uk
 
-## 3.24. sn
-(surname), (RFC4519); *OID:*2.5.4.4
+## 3.24. sn (surname)
+(RFC4519); *OID:*2.5.4.4
 
 *Application utility class:*core; *\# of values: *multi
 
@@ -1903,8 +1905,8 @@ sn: Carson-Smith\
 sn: Carson\
 sn: Smith
 
-## 3.25. st
-(stateOrProvinceName), (RFC4519); *OID:*2.5.4.8
+## 3.25. st (stateOrProvinceName)
+(RFC4519); *OID:*2.5.4.8
 
 *Application utility class:*extended; *\# of values: *multi
 
@@ -2057,7 +2059,7 @@ Avoid. UniqueIdentifier should not be reused because RFC4524 states
 \"The domain within which the identifier is unique and the exact
 semantics of the identifier are for local definition.\"
 
-## 3.31. userCertificate 
+## 3.31. userCertificate
 (RFC4523); *OID:*2.5.4.36
 
 *Application utility class:*extended; *\# of values: *multi
