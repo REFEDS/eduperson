@@ -447,7 +447,7 @@ eduPersonEntitlement: urn:mace:washington.edu:confocalMicroscope
           SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 ```
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -574,7 +574,7 @@ eduPersonOrgDN: o=Hogwarts, dc=hsww, dc=wiz
           SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
 ```
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -653,7 +653,7 @@ eduPersonOrgUnitDN: ou=Potions, o=Hogwarts, dc=hsww, dc=wiz
           SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
 ```
 
-*Application utility class:*standard; *# of values:* single
+*Application utility class:* standard; *# of values:* single
 
 *Definition*
 
@@ -747,7 +747,7 @@ eduPersonPrimaryOrgUnitDN: ou=Music Department, o=Notre Dame, dc=nd, dc=edu
           SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
 ```
 
-*Application utility class:*standard; *# of values:* single
+*Application utility class:* standard; *# of values:* single
 
 *Definition*
 
@@ -855,7 +855,7 @@ eduPersonPrincipalNamePrior: <bar@hsww.wiz>
 
 *Indexing:* pres, eq, sub
 
-### 2.2.10. eduPersonScopedAffiliation
+### 2.2.10. eduPersonScopedAffiliation
 (defined in eduPerson (200312)); *OID:* 1.3.6.1.4.1.5923.1.1.1.9
 
 *RFC4512 definition*
@@ -1583,7 +1583,7 @@ labeledURI: http://www.hsww.wiz/%7Eputter Harry's home page
 ## 3.13. mail
 (defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.3
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -1669,7 +1669,7 @@ mobile: +47 22 44 66 88
 ## 3.16. o (organizationName)
 (defined in RFC4519); *OID:* 2.5.4.10
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -1691,10 +1691,10 @@ white pages
 
 o: St. Cloud State
 
-## 3.17. ou (organizationalUnitName)
+## 3.17. ou (organizationUnitName)
 (defined in RFC4519); *OID:* 2.5.4.11
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -1856,7 +1856,7 @@ preferredLanguage: EO
 ## 3.23. seeAlso
 (RFC4519); *OID:* 2.5.4.34
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -1977,7 +1977,7 @@ street: 303 Mulberry St.
 ## 3.27. telephoneNumber
 (RFC4519); *OID:* 2.5.4.20
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -2019,7 +2019,7 @@ title: Assistant Vice-Deputy for Redundancy Reduction
 ## 3.29. uid
 (RFC4519); *OID:* 0.9.2342.19200300.100.1.1
 
-*Application utility class:*standard; *# of values:* multi
+*Application utility class:* standard; *# of values:* multi
 
 *Definition*
 
@@ -2048,7 +2048,7 @@ uid: gmettes
 ## 3.30. uniqueIdentifier
 (RFC4524); *OID:* 0.9.2342.19200300.100.1.44
 
-*Application utility class:*no recommendation; *# of values: *
+*Application utility class:* no recommendation; *# of values:*
 
 *Definition*
 
