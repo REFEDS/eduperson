@@ -249,7 +249,7 @@ Each entry specifies the version in which the attribute was first
 defined.
 
 ### 2.2.1. eduPersonAffiliation
-(defined in eduPerson 1.0); OID: 1.3.6.1.4.1.5923.1.1.1.1
+(defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.1
 
 *RFC4512 definition*
 
