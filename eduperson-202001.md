@@ -371,12 +371,12 @@ white pages, controlling access to resources
 
 eduPersonAffiliation: faculty
 
-*Syntax: *directoryString;*Indexing:*pres, eq
+*Syntax:* directoryString; *Indexing:* pres, eq
 
 ### 2.2.2. eduPersonEntitlement
 (defined in eduPerson200210); *OID:* 1.3.6.1.4.1.5923.1.1.1.7
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.7
@@ -432,12 +432,12 @@ controlling access to resources
 
 eduPersonEntitlement: urn:mace:washington.edu:confocalMicroscope
 
-*Syntax: *directoryString; *Indexing:*No recommendation
+*Syntax:* directoryString; *Indexing:* No recommendation
 
 ### 2.2.3. eduPersonNickname
 (defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.2
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.2
@@ -480,12 +480,12 @@ white pages
 
 eduPersonNickname: Spike
 
-*Syntax: *directoryString;*Indexing:*pres, eq, sub
+*Syntax:* directoryString; *Indexing:* pres, eq, sub
 
 ### 2.2.4. eduPersonOrgDN
 (defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.3
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.3
@@ -559,12 +559,12 @@ white pages
 
 eduPersonOrgDN: o=Hogwarts, dc=hsww, dc=wiz
 
-*Syntax: *distinguishedName;*Indexing:*No recommendation
+*Syntax:* distinguishedName; *Indexing:* No recommendation
 
 ### 2.2.5. eduPersonOrgUnitDN
 (defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.4
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.4
@@ -638,12 +638,12 @@ white pages
 
 eduPersonOrgUnitDN: ou=Potions, o=Hogwarts, dc=hsww, dc=wiz
 
-*Syntax: *distinguishedName;*Indexing:*eq
+*Syntax:* distinguishedName; *Indexing:* eq
 
 ### 2.2.6. eduPersonPrimaryAffiliation
 (defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.5
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.5
@@ -737,7 +737,7 @@ eduPersonPrimaryOrgUnitDN: ou=Music Department, o=Notre Dame, dc=nd, dc=edu
 ### 2.2.8. eduPersonPrincipalName
 (defined in eduPerson 1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.6
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.6
@@ -788,7 +788,7 @@ identifier is needed
 
 eduPersonPrincipalName: <hputter@hsww.wiz>
 
-*Syntax: *directoryString; In general Unicode characters are allowed. In
+*Syntax:* directoryString; In general Unicode characters are allowed. In
 LDAP, this data type implies UTF-8 encoding, and such characters are
 permitted. However, to reduce the risk of application errors, it is
 recommended that values contain only characters that could occur in
@@ -801,7 +801,7 @@ and may not be limited to UTF-8 when more than LDAP is involved.
 ### 2.2.9. eduPersonPrincipalNamePrior
 (defined in eduPerson 201211); *OID:* 1.3.6.1.4.1.5923.1.1.1.12
 
-*RFC4512 definition *
+*RFC4512 definition*
 
 ```
 ( 1.3.6.1.4.1.5923.1.1.1.12
@@ -1125,7 +1125,7 @@ eduPersonAssurance: urn:mace:incommon:IAQ:sample 
 eduPersonAssurance: <http://idm.example.org/LOA#sample>
 
 
-*Syntax: *directoryString; *Indexing:* No recommendation
+*Syntax:* directoryString; *Indexing:* No recommendation
 
 ### 2.2.13. eduPersonUniqueId
 (defined in eduPerson 201305); *OID:* 1.3.6.1.4.1.5923.1.1.1.13
@@ -1617,7 +1617,7 @@ mail: dumbledore@hsww.wiz
 ## 3.14. manager
 (defined in RFC4524); *OID:* 0.9.2342.19200300.100.1.10
 
-*Application utility class:*no recommendation; *# of values:* multi
+*Application utility class:* No recommendation; *# of values:* multi
 
 *Definition*
 
@@ -2140,7 +2140,7 @@ email clients
 ## 3.34. x500uniqueIdentifier
 (RFC4519); *OID:* 2.5.4.45
 
-*Application utility class:*no recommendation; *# of values: *
+*Application utility class:* No recommendation; *# of values: *
 
 *Definition*
 
