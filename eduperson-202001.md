@@ -661,7 +661,7 @@ Specifies the person's primary relationship to the institution in broad
 categories such as student, faculty, staff, alum, etc. (See controlled
 vocabulary).
 
-*Permissible values *
+*Permissible values*
 
 faculty, student, staff, alum, member, affiliate, employee,
 library-walk-in
@@ -2140,7 +2140,7 @@ email clients
 ## 3.34. x500uniqueIdentifier
 (RFC4519); *OID:* 2.5.4.45
 
-*Application utility class:* No recommendation; *# of values: *
+*Application utility class:* No recommendation; *# of values:*
 
 *Definition*
 
