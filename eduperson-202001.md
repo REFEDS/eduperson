@@ -27,10 +27,10 @@ a production enterprise directory service environment.
 
 - [1. Introduction](#1-introduction)
   - [1.1 General Remarks](#11-general-remarks)
-  - [1.2. Identifier Concepts](#12-identifier-concepts)
-  - [1.3. Scope](#13-scope)
+  - [1.2. Identifier Concepts](#12identifier-concepts)
+  - [1.3. Scope](#13scope)
 - [2. eduPerson Object Class and Attributes](#2-eduperson-object-class-and-attributes)
-  - [2.1. eduPerson Object Class Definition](#21-eduperson-object-class-definition)
+  - [2.1. eduPerson Object Class Definition](#21eduperson-object-class-definition)
   - [2.2. eduPerson Attribute Definitions](#22-eduperson-attribute-definitions)
     - [2.2.1. eduPersonAffiliation](#221-edupersonaffiliation)
     - [2.2.2. eduPersonEntitlement](#222-edupersonentitlement)
@@ -56,21 +56,21 @@ a production enterprise directory service environment.
   - [3.8. homePostalAddress](#38-homepostaladdress)
   - [3.9. initials](#39-initials)
   - [3.10. jpegPhoto](#310-jpegphoto)
-  - [3.11. l (localityName)](#311-llocalityName)
+  - [3.11. l (localityName)](#311-l-localityName)
   - [3.12. labeledURI](#312-labeleduri)
   - [3.13. mail](#313-mail)
   - [3.14. manager](#314-manager)
   - [3.15. mobile](#315-mobile)
-  - [3.16. o (organizationName)](#316-oorganizationname)
-  - [3.17. ou (organizationUnitName)](#317-ouorganizationunitname)
+  - [3.16. o (organizationName)](#316-o-organizationname)
+  - [3.17. ou (organizationUnitName)](#317-ou-organizationunitname)
   - [3.18. pager](#318-pager)
   - [3.19. postalAddress](#319-postaladdress)
   - [3.20. postalCode](#320-postalcode)
   - [3.21. postOfficeBox](#321-postofficebox)
   - [3.22. preferredLanguage](#322-preferredlanguage)
   - [3.23. seeAlso](#323-seealso)
-  - [3.24. sn (surname)](#324-snsurname)
-  - [3.25. st (stateOrProvinceName)](#325-ststateorprovincename)
+  - [3.24. sn (surname)](#324-sn-surname)
+  - [3.25. st (stateOrProvinceName)](#325-st-stateorprovincename)
   - [3.26. street](#326-street)
   - [3.27. telephoneNumber](#327-telephonenumber)
   - [3.28. title](#328-title)
@@ -126,7 +126,7 @@ information on eduPerson, including LDIF for implementing the object
 class and attributes, is available at its home on the web:
 <https://refeds.org/eduperson>
 
-## 1.2. Identifier Concepts
+## 1.2. Identifier Concepts
 
 Among the most common and useful personal attributes are identifiers. An
 identifier is an information element that is specifically designed to
@@ -144,7 +144,7 @@ cases (e.g., SAML) this material has been explicitly informed by, and is
 a reaction to, problems or limitations arising from the application of
 the eduPerson-defined identifiers to federated authentication.
 
-In most cases, it is advisable to defer to a particular protocol\'s
+In most cases, it is advisable to defer to a particular protocol's
 specifications to understand what constitutes best practice in that
 particular context. It may often be reasonable to map usage of eduPerson
 identifiers into a protocol, but be aware that there may be subtle
