@@ -2215,6 +2215,11 @@ value choices, especially as part of the DN.
 This section lists changes that have been made from version to version
 of eduPerson.
 
+The following list shows changes in version (202111) relative to version
+(202001).
+
+-  1\. Section 2.2.15 "eduPersonAnalyticsTag" added.
+
 The following list shows changes in version (202001) relative to version
 (201602).
 
