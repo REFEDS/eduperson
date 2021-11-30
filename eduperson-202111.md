@@ -6,9 +6,9 @@ Document: refeds-eduPerson-202111
 
 REFEDS Schema Board                                                       
   ----------------------------------------------------------------- ------------------------------------------------
-  **Released: 15 November 2021**                                     
+  **Released: 30 November 2021**                                     
 
-  **Copyright © 2019 by Internet2 and/or the respective authors**   
+  **Copyright © 2021 by Internet2 and/or the respective authors**   
   Comments to: <schema-discuss@lists.refeds.org>
   ------------------------------------------------------------------------------------------------------------------
 
@@ -2218,7 +2218,9 @@ of eduPerson.
 The following list shows changes in version (202111) relative to version
 (202001).
 
--  1\. Section 2.2.15 "eduPersonAnalyticsTag" added.
+-  1\. Copyright date updated
+
+-  2\. Section 2.2.15 "eduPersonAnalyticsTag" added.
 
 The following list shows changes in version (202001) relative to version
 (201602).
