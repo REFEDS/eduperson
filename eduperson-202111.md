@@ -1,25 +1,25 @@
-eduPerson (202001)
+eduPerson (202111)
 ==================
 
   ------------------------------------------------------------------------------------------------------------------
-Document: refeds-eduPerson-202001
+Document: refeds-eduPerson-202111
 
 REFEDS Schema Board                                                       
   ----------------------------------------------------------------- ------------------------------------------------
-  **Released: 09 January 2020**                                     
+  **Released: 30 November 2021**                                     
 
-  **Copyright © 2019 by Internet2 and/or the respective authors**   
+  **Copyright © 2021 by Internet2 and/or the respective authors**   
   Comments to: <schema-discuss@lists.refeds.org>
   ------------------------------------------------------------------------------------------------------------------
 
 ####  
 
-eduPerson Object Class Specification (202001)
+eduPerson Object Class Specification (202111)
 ---------------------------------------------
 
 **Status of this document**
 
-The (202001) version of the eduPerson object class specification is
+The (202111) version of the eduPerson object class specification is
 described in this document. This version is appropriate for adoption in
 a production enterprise directory service environment.
 
@@ -46,6 +46,7 @@ a production enterprise directory service environment.
     - [2.2.12. eduPersonAssurance](#2212-edupersonassurance)
     - [2.2.13. eduPersonUniqueId](#2213-edupersonuniqueid)
     - [2.2.14. eduPersonOrcid](#2214-edupersonorcid)
+    - [2.2.15. eduPersonAnalyticsTag](#2215-edupersonanalyticstag)
 - [3. Comments on Other Common Person Attributes](#3-comments-on-other-common-person-attributes)
   - [3.1. audio](#31-audio)
   - [3.2. cn (commonName)](#32-cncommonname)
@@ -1237,6 +1238,63 @@ eduPersonOrcid: <http://orcid.org/0000-0002-1825-0097>
 
 *Indexing:* pres, eq
 
+### 2.2.15. eduPersonAnalyticsTag
+(defined in eduPerson 202111); *OID:* 1.3.6.1.4.1.5923.1.1.1.17
+
+*RFC4512 definition*
+
+```
+( 1.3.6.1.4.1.5923.1.1.1.17
+         NAME 'eduPersonAnalyticsTag'
+         DESC 'Arbitrary reporting value associated with a subject or transaction'
+         EQUALITY caseExactMatch
+        SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+```
+
+
+*Application utility class:* extended; *# of values:* multi
+
+*Definition*
+
+An opaque string that aggregates the use of a service by a set of subjects for the purpose of reporting or analytics by the originating organization.
+
+When service access is anonymous or pseudonymous, a subject's home organization may need the ability to summarize and analyze the use of a service without explicitly recording that information at the point of access. This attribute allows for data to be provided to a service at the point of access so that it can be compiled for reporting or other purposes by the service. Multiple subjects may have the same value.
+
+
+A value consists of 1 to 127 ASCII characters, each of which is either an alphanumeric ASCII character, the @ symbol (ASCII 64), an equals sign (ASCII 61), a hyphen (ASCII 45), an underscore (ASCII 95), or a period (ASCII 46). The first character MUST be alphanumeric.
+
+The ABNF [RFC2234] grammar is therefore:
+
+<value> = (ALPHA / DIGIT) 0*126(ALPHA / DIGIT / "@" / "=" / "-" / “_” / ".")
+
+
+Values should not be solely distinguished by case.
+
+
+*Notes*
+
+Granularity of the values SHOULD be coarse enough to prevent unintentional identification of subjects or correlation of access to multiple services, but is not otherwise constrained except by syntax. It is the responsibility of the Identity Provider to assign values that prevent correlation by Service Providers if such correlation is deemed inappropriate by the Identity Provider’s institution.
+
+The values SHOULD NOT be interpreted by a consuming service other than as opaque values to be matched for the intended reporting function.
+
+This attribute MUST NOT be used to make authorization decisions.
+
+The mechanism by which the usage reports are provided to an organization is outside the scope of this specification.
+
+This attribute may or may not be stored in a typical Directory Service because of its potential variance by service, but it is defined here for use in other contexts such as Security Assertion Markup Language (SAML) assertions or OpenID Connect tokens. It is typically used in federated scenarios in which anonymous or pseudonymous access is more frequent.
+
+*Examples*
+
+SAML:
+```
+<saml:Attribute Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.17"
+NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+FriendlyName=”eduPersonAnalyticsTag”>
+       <saml:AttributeValue>FOOBAR_ZORKMID</saml:AttributeValue>
+       <saml:AttributeValue>FOOBAR_ZORKMID2</saml:AttributeValue>
+</saml:Attribute>
+```
+
 # 3. Comments on Other Common Person Attributes
 
 The attributes in the following section are from other standard object
@@ -2156,6 +2214,13 @@ value choices, especially as part of the DN.
 
 This section lists changes that have been made from version to version
 of eduPerson.
+
+The following list shows changes in version (202111) relative to version
+(202001).
+
+-  1\. Copyright date updated
+
+-  2\. Section 2.2.15 "eduPersonAnalyticsTag" added.
 
 The following list shows changes in version (202001) relative to version
 (201602).
