@@ -1,25 +1,25 @@
-eduPerson (202111)
+eduPerson (202207)
 ==================
 
   ------------------------------------------------------------------------------------------------------------------
-Document: refeds-eduPerson-202111
+Document: refeds-eduPerson-202207
 
 REFEDS Schema Board                                                       
   ----------------------------------------------------------------- ------------------------------------------------
-  **Released: 30 November 2021**                                     
+  **Released: xx July 2022**                                     
 
-  **Copyright © 2021 by Internet2 and/or the respective authors**   
+  **Copyright © 2022 by Internet2 and/or the respective authors**   
   Comments to: <schema-discuss@lists.refeds.org>
   ------------------------------------------------------------------------------------------------------------------
 
 ####  
 
-eduPerson Object Class Specification (202111)
+eduPerson Object Class Specification (202207)
 ---------------------------------------------
 
 **Status of this document**
 
-The (202111) version of the eduPerson object class specification is
+The (202207) version of the eduPerson object class specification is
 described in this document. This version is appropriate for adoption in
 a production enterprise directory service environment.
 
@@ -47,6 +47,8 @@ a production enterprise directory service environment.
     - [2.2.13. eduPersonUniqueId](#2213-edupersonuniqueid)
     - [2.2.14. eduPersonOrcid](#2214-edupersonorcid)
     - [2.2.15. eduPersonAnalyticsTag](#2215-edupersonanalyticstag)
+    - [2.2.16. eduPersonDisplayPronouns](#2216-edupersondisplaypronouns)
+
 - [3. Comments on Other Common Person Attributes](#3-comments-on-other-common-person-attributes)
   - [3.1. audio](#31-audio)
   - [3.2. cn (commonName)](#32-cncommonname)
@@ -1294,6 +1296,53 @@ FriendlyName=”eduPersonAnalyticsTag”>
        <saml:AttributeValue>FOOBAR_ZORKMID2</saml:AttributeValue>
 </saml:Attribute>
 ```
+
+### 2.2.16. eduPersonDisplayPronouns
+(defined in eduPerson 202207); *OID:* 1.3.6.1.4.1.5923.1.1.1.18
+
+RFC4512 definition
+
+```
+( 1.3.6.1.4.1.5923.1.1.1.18
+       NAME 'eduPersonDisplayPronouns'
+       DESC 'Human-readable set of pronouns'
+       SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+```
+
+*Application utility class: extended; # of values: single*
+
+*Definition*
+Text representing the word(s) a person prefers as their personal pronoun(s). 
+
+Multiple personal pronouns should include separators to support human readability, e.g., ‘Ashe’, ‘she/her/hers’, or ‘ella, ellas’, or  ‘היא’, or  ‘She/ella*, O /او ,  她/她,  היא’.   
+
+Preferred words to reference the person are not necessarily conventional grammatical pronouns, e.g., Ashe.
+
+
+Attribute values of eduPersonDisplayPronouns do not warrant any inference about the person’s gender, sexual preferences, sex assigned at birth, biology, etc.
+
+Values should not be solely distinguished by case.
+
+*Notes*
+
+This value should not be indexed.
+
+*Examples*
+
+SAML:
+```
+<saml:Attribute Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.18"
+NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+FriendlyName="eduPersonDisplayPronouns">
+        <saml:AttributeValue>Ashe, or She/ella*, O /او ,  她/她,  היא</saml:AttributeValue>
+</saml:Attribute>
+```
+
+LDIF fragment:
+```
+eduPersonDisplayPronouns: Ashe, or She/ella* O /او ,  她/她,  ה
+```
+
 
 # 3. Comments on Other Common Person Attributes
 
