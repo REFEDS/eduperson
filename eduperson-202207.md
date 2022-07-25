@@ -1,4 +1,4 @@
-eduPerson v4.4.0
+eduPerson (202207) - v4.4.0
 ==================
 
   ------------------------------------------------------------------------------------------------------------------
@@ -14,12 +14,12 @@ REFEDS Schema Board
 
 ####  
 
-eduPerson Object Class Specification v4.4.0
+eduPerson Object Class Specification (20220207) v4.4.0
 ---------------------------------------------
 
 **Status of this document**
 
-This document describes the eduPerson object class specification v4.4.0. Previous versions have been [mapped](https://wiki.refeds.org/display/STAN/Eduperson+Version+History) to the applicable semantic versioning model. 
+This document describes the eduPerson object class specification (20220207) v4.4.0. Previous versions have also been [mapped](https://wiki.refeds.org/display/STAN/Eduperson+Version+History) to the applicable semantic versioning model.
 
 This version is appropriate for adoption in a production enterprise directory service environment.
 
@@ -377,7 +377,7 @@ eduPersonAffiliation: faculty
 *Syntax:* directoryString; *Indexing:* pres, eq
 
 ### 2.2.2. eduPersonEntitlement
-(defined in eduPerson v2.0.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.7
+(defined in eduPerson (200210) v2.0.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.7
 
 *RFC4512 definition*
 
@@ -681,7 +681,7 @@ that the single-valued eduPersonPrimaryAffiliation attribute assigns
 each person in the directory into one and only one category of
 affiliation. There are application scenarios where this would be useful.
 
-See [eduPersonAffiliation](http://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-v4.1.0.html#eduPersonAffiliation)for
+See [eduPersonAffiliation](http://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html#eduPersonAffiliation) for
 further details.
 
 *Example applications for which this attribute would be useful*
@@ -695,7 +695,7 @@ eduPersonPrimaryAffiliation: student
 *Syntax:* directoryString; *Indexing:* pres, eq, sub
 
 ### 2.2.7. eduPersonPrimaryOrgUnitDN
-(defined in eduPerson v2.0.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.8
+(defined in eduPerson (200210) v2.0.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.8
 
 *RFC4512 definition*
 
@@ -802,7 +802,7 @@ and may not be limited to UTF-8 when more than LDAP is involved.
 *Indexing:* pres, eq, sub
 
 ### 2.2.9. eduPersonPrincipalNamePrior
-(defined in eduPerson 201211); *OID:* 1.3.6.1.4.1.5923.1.1.1.12
+(defined in eduPerson (201310) v4.4.0; *OID:* 1.3.6.1.4.1.5923.1.1.1.12
 
 *RFC4512 definition*
 
@@ -859,7 +859,7 @@ eduPersonPrincipalNamePrior: <bar@hsww.wiz>
 *Indexing:* pres, eq, sub
 
 ### 2.2.10. eduPersonScopedAffiliation
-(defined in eduPerson (v2.1.0)); *OID:* 1.3.6.1.4.1.5923.1.1.1.9
+(defined in eduPerson (200312) v2.1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.9
 
 *RFC4512 definition*
 
@@ -922,7 +922,7 @@ eduPersonScopedAffiliation: <faculty@cs.berkeley.edu>
 *Syntax:* directoryString; *Indexing:* pres, eq
 
 ### 2.2.11. eduPersonTargetedID
-(defined in eduPerson v2.1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.10
+(defined in eduPerson (200312) v2.1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.10
 
 *RFC4512 definition*
 
@@ -1072,7 +1072,7 @@ long-term account linking relationship between an identity provider and
 service provider(s) (or other identity/attribute provider).
 
 ### 2.2.12. eduPersonAssurance
-(defined in eduPerson v3.2.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.11
+(defined in eduPerson (200806) v3.2.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.11
 
 *RFC4512 definition*
 
@@ -1131,7 +1131,7 @@ eduPersonAssurance: <http://idm.example.org/LOA#sample>
 *Syntax:* directoryString; *Indexing:* No recommendation
 
 ### 2.2.13. eduPersonUniqueId
-(defined in eduPerson 201305); *OID:* 1.3.6.1.4.1.5923.1.1.1.13
+(defined in eduPerson (201310) v4.0.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.13
 
 *RFC4512 definition*
 
@@ -1197,7 +1197,7 @@ eduPersonUniqueId: <28c5353b8bb34984a8bd4169ba94c606@foo.edu>
 *Indexing:* pres, eq
 
 ### 2.2.14. eduPersonOrcid
-(defined in eduPerson v4.1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.16
+(defined in eduPerson (201602) v4.1.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.16
 
 *RFC4512 definition*
 
@@ -1241,7 +1241,7 @@ eduPersonOrcid: <http://orcid.org/0000-0002-1825-0097>
 *Indexing:* pres, eq
 
 ### 2.2.15. eduPersonAnalyticsTag
-(defined in eduPerson v4.3.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.17
+(defined in eduPerson (202111) v4.3.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.17
 
 *RFC4512 definition*
 
@@ -1298,7 +1298,7 @@ FriendlyName=”eduPersonAnalyticsTag”>
 ```
 
 ### 2.2.16. eduPersonDisplayPronouns
-(defined in eduPerson 202207); *OID:* 1.3.6.1.4.1.5923.1.1.1.18
+(defined in eduPerson (202207) v4.4.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.18
 
 RFC4512 definition
 
@@ -2264,8 +2264,8 @@ value choices, especially as part of the DN.
 This section lists changes that have been made from version to version
 of eduPerson.
 
-The following list shows changes in version (v4.4.0) relative to version
-(v4.3.0).
+The following list shows changes in version (202207) v4.4.0 relative to version
+(202111) v4.3.0.
 
 -  1\. Copyright date updated
 
@@ -2273,15 +2273,15 @@ The following list shows changes in version (v4.4.0) relative to version
 
 -  3\. All version history mapped to a semantic version model.
 
-The following list shows changes in version (v4.3.0) relative to version
-(v4.2.0).
+The following list shows changes in version (202111) v4.3.0 relative to version
+(202001) v4.2.0.
 
 -  1\. Copyright date updated
 
 -  2\. Section 2.2.15 "eduPersonAnalyticsTag" added.
 
-The following list shows changes in version (v4.2.0) relative to version
-(v4.1.0).
+The following list shows changes in version (202001) v4.2.0 relative to version (201602) 
+v4.1.0.
 
 -   1\. Section 1.2 "Identifier Concepts" updated.
 
@@ -2293,13 +2293,13 @@ The following list shows changes in version (v4.2.0) relative to version
 
 -   5\. Section 3.\* All RFCs verified.
 
-The following list shows changes in version (v4.1.0) relative to version
-(v4.0.0).
+The following list shows changes in version (201602) v4.1.0 relative to version
+(201310) v4.0.0.
 
 -   1\. Section 2.2.14 "eduPersonOrcid" added
 
-The following list shows changes in version (v4.0.0) relative to version
-(v3.2.1).
+The following list shows changes in version (201310) v4.0.0 relative to version
+(201203) v3.2.1.
 
 -   1\. Section 1.3 "Scope" revised due to additional scoped attributes
 
@@ -2344,8 +2344,8 @@ The following list shows changes in version (v4.0.0) relative to version
 
 -   15\. Section 5 "References" now include X.520.
 
-The following list shows changes in version (v3.2.1) relative to version
-(v3.2.0).
+The following list shows changes in version (201203) v3.2.1 relative to version
+(200806) v3.2.0.
 
 -   1\. Section 2.2.1 "eduPersonAffiliation" text updated to clarify its
     definition and comment on its usage
@@ -2360,13 +2360,13 @@ The following list shows changes in version (v3.2.1) relative to version
     and shortened to update content and to eliminate guidelines that are
     more properly defined by identity federations.
 
-The following list shows changes in version (v3.2.0) relative to version
-(v3.1.0).
+The following list shows changes in version (200806) v3.2.0 relative to version
+(200712) v3.1.0.
 
 -   1\. In section 1.1, changed RFC2256 to RFC4512.
 
 -   2\. In section 1.1, removed paragraph explaining upgrade process from
-    v2.1.0 to v3.0.0.
+    200312 to 200604.
 
 -   3\. In section 1.2, removed reference to an "upcoming MACE-Dir document
     on information models"
@@ -2466,8 +2466,8 @@ The following list shows changes in version (v3.2.0) relative to version
     recommendation". No indexing recommendation has ever been specified for
     these attributes, this language is just for clarification. 
 
-The following list shows changes in version (v3.1.0) relative to version
-(v3.0.0).
+The following list shows changes in version (200712) v3.1.0 relative to version
+(200604) v3.0.0.
 
 -   1\. In section 2.2.1, "eduPersonAffiliation" and section 2.2.6,
     "eduPersonPrimaryAffiliation," added "library-walk-in"
@@ -2477,8 +2477,8 @@ The following list shows changes in version (v3.1.0) relative to version
     "eduPersonPrimaryAffiliation," added the new paragraph explaining
     "library-walk-in."
 
-The following list shows changes in version (v3.0.0) relative to version
-(v2.1.0).
+The following list shows changes in version (200604) v3.0.0 relative to version
+(200312) v2.1.0.
 
 -   1\. Definition of eduPersonPrincipalName and eduPersonScopedAffiliation
     modified. A "first match from the left" rule is invoked such that the
@@ -2488,8 +2488,8 @@ The following list shows changes in version (v3.0.0) relative to version
 -   2\. Definition of eduPersonTargetedID revised to align with current
     recommended practice in Shibboleth applications.
 
-The following list shows changes in version (v2.1.0) relative to version
-(v2.0.0).
+The following list shows changes in version (200312) v2.1.0 relative to version
+(v200212) v2.0.0.
 
 -   1\. EduPersonScopedAffiliation added.
 
@@ -2512,7 +2512,7 @@ The following list shows changes in version (v2.1.0) relative to version
 
 The following lists the changes (other than typographical corrections)
 that were made between version 1.0 of the eduPerson object class
-definition and version v2.0.0.
+definition and version (200212) v2.0.0.
 
 -   1\. Document Status and Introductory sections have been added.
 
