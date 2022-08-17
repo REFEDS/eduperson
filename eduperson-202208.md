@@ -1,4 +1,4 @@
-eduPerson (202207) - v4.4.0
+eduPerson (202208) - v4.4.0
 ==================
 
   ------------------------------------------------------------------------------------------------------------------
@@ -6,7 +6,7 @@ Document: refeds-eduPerson-440
 
 REFEDS Schema Board                                                       
   ----------------------------------------------------------------- ------------------------------------------------
-  **Released: xx July 2022**                                     
+  **Released: 17 August 2022**                                     
 
   **Copyright © 2022 by Internet2 and/or the respective authors**   
   Comments to: <schema-discuss@lists.refeds.org>
@@ -14,12 +14,12 @@ REFEDS Schema Board
 
 ####  
 
-eduPerson Object Class Specification (20220207) v4.4.0
+eduPerson Object Class Specification (20220208) v4.4.0
 ---------------------------------------------
 
 **Status of this document**
 
-This document describes the eduPerson object class specification (20220207) v4.4.0. Previous versions have also been [mapped](https://wiki.refeds.org/display/STAN/Eduperson+Version+History) to the applicable semantic versioning model.
+This document describes the eduPerson object class specification (20220208) v4.4.0. Previous versions have also been [mapped](https://wiki.refeds.org/display/STAN/Eduperson+Version+History) to the applicable semantic versioning model.
 
 This version is appropriate for adoption in a production enterprise directory service environment.
 
@@ -1298,7 +1298,7 @@ FriendlyName=”eduPersonAnalyticsTag”>
 ```
 
 ### 2.2.16. eduPersonDisplayPronouns
-(defined in eduPerson (202207) v4.4.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.18
+(defined in eduPerson (202208) v4.4.0); *OID:* 1.3.6.1.4.1.5923.1.1.1.18
 
 RFC4512 definition
 
@@ -2264,7 +2264,7 @@ value choices, especially as part of the DN.
 This section lists changes that have been made from version to version
 of eduPerson.
 
-The following list shows changes in version (202207) v4.4.0 relative to version
+The following list shows changes in version (202208) v4.4.0 relative to version
 (202111) v4.3.0.
 
 -  1\. Copyright date updated
