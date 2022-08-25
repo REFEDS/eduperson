@@ -129,6 +129,19 @@ olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.16
     SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
 #
 ################################################################################
+olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.17
+    NAME 'eduPersonAnalyticsTag'
+    DESC 'Arbitrary reporting value associated with a subject or transaction'
+    EQUALITY caseExactMatch
+    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+#
+################################################################################
+olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.18
+    NAME 'eduPersonDisplayPronouns'
+    DESC 'Human-readable set of pronouns'
+    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+#
+################################################################################
 #
 olcObjectClasses: ( 1.3.6.1.4.1.5923.1.1.2
     NAME 'eduPerson'
