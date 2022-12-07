@@ -1,7 +1,7 @@
 # ======================================================================================================================================
 #
 # File: eduPerson.adschema.ldf
-# Version: 202111
+# Version: 4.4.0 (202208)
 # 
 # This file should be imported with the following command while logged in to the Schema Master Domain Controller as a Schema Admin user:
 #
@@ -233,7 +233,7 @@ adminDescription: ORCID iDs are persistent digital identifiers for individual re
 attributeID: 1.3.6.1.4.1.5923.1.1.1.16
 attributeSyntax: 2.5.5.12
 oMSyntax: 64
-isSingleValued: TRUE
+isSingleValued: FALSE
 searchFlags: 0
 showInAdvancedViewOnly: TRUE
 systemOnly: FALSE
@@ -250,6 +250,22 @@ attributeID: 1.3.6.1.4.1.5923.1.1.1.17
 attributeSyntax: 2.5.5.12
 oMSyntax: 64
 isSingleValued: FALSE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonDisplayPronouns,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonDisplayPronouns
+lDAPDisplayName: eduPersonDisplayPronouns
+adminDisplayName: eduPersonDisplayPronouns
+adminDescription: Text representing the word(s) a person prefers as their personal pronoun(s). Multiple personal pronouns should include separators to support human readability.
+attributeID: 1.3.6.1.4.1.5923.1.1.1.18
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: TRUE
 searchFlags: 0
 showInAdvancedViewOnly: TRUE
 systemOnly: FALSE
@@ -289,6 +305,7 @@ mayContain: 1.3.6.1.4.1.5923.1.1.1.12
 mayContain: 1.3.6.1.4.1.5923.1.1.1.13
 mayContain: 1.3.6.1.4.1.5923.1.1.1.16
 mayContain: 1.3.6.1.4.1.5923.1.1.1.17
+mayContain: 1.3.6.1.4.1.5923.1.1.1.18
 defaultObjectCategory: CN=eduPerson,cn=Schema,cn=Configuration,DC=X
 systemOnly: FALSE
 
