@@ -240,8 +240,10 @@ attributes:
                     eduPersonTargetedID $
                     eduPersonAssurance $
                     eduPersonPrincipalNamePrior $
-                    eduPersonUniqueId )
-                    eduPersonOrcid )
+                    eduPersonUniqueId $
+                    eduPersonOrcid $
+                    eduPersonAnalyticsTag $
+                    eduPersonDisplayPronouns )
 )
 ```
 
@@ -1234,7 +1236,7 @@ NIH/NLM SciENcv self-service web application.
 
 *Example (LDIF Fragment)*
 
-eduPersonOrcid: <http://orcid.org/0000-0002-1825-0097>
+eduPersonOrcid: <https://orcid.org/0000-0002-1825-0097>
 
 *Syntax:* directoryString;
 
