@@ -1,0 +1,328 @@
+# ======================================================================================================================================
+#
+# File: eduPerson.adschema.ldf
+# Version: 4.4.0 (202208)
+# 
+# This file should be imported with the following command while logged in to the Schema Master Domain Controller as a Schema Admin user:
+#
+# ldifde -i -f eduPerson.adschema.ldif -v 
+#
+# REMEMBER TO SEARCH AND REPLACE DC=X WITH YOUR DC SUFFIX
+#
+#
+# =======================================================================================================================================
+# ==================================================================
+# Attributes
+# ==================================================================
+dn: CN=eduPersonAffiliation,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonAffiliation
+lDAPDisplayName: eduPersonAffiliation
+adminDisplayName: eduPersonAffiliation
+adminDescription: Specifies the person's relationship(s) to the institution, permissible values: faculty, student, staff, alum, member, affiliate, employee
+attributeID: 1.3.6.1.4.1.5923.1.1.1.1
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonNickname,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonNickname
+lDAPDisplayName: eduPersonNickname
+adminDisplayName: eduPersonNickname
+adminDescription: Person's nickname, or the informal name by which they are accustomed to be hailed
+attributeID: 1.3.6.1.4.1.5923.1.1.1.2
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonOrgDN,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonOrgDN
+lDAPDisplayName: eduPersonOrgDN
+adminDisplayName: eduPersonOrgDN
+adminDescription: Specifies the person's relationship(s) to the institution, permissible values: faculty, student, staff, alum, member, affiliate, employee
+attributeID: 1.3.6.1.4.1.5923.1.1.1.3
+attributeSyntax: 2.5.5.1
+oMSyntax: 127
+isSingleValued: TRUE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonOrgUnitDN,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonOrgUnitDN
+lDAPDisplayName: eduPersonOrgUnitDN
+adminDisplayName: eduPersonOrgUnitDN
+adminDescription: The distinguished name(s) (DN) of the directory entries representing the person's Organizational Unit(s)
+attributeID: 1.3.6.1.4.1.5923.1.1.1.4
+attributeSyntax: 2.5.5.1
+oMSyntax: 127
+isSingleValued: FALSE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonPrimaryAffiliation,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonPrimaryAffiliation
+lDAPDisplayName: eduPersonPrimaryAffiliation
+adminDisplayName: eduPersonPrimaryAffiliation
+adminDescription: Specifies the person's PRIMARY relationship to the institution in broad categories such as student, faculty, staff, alum, etc
+attributeID: 1.3.6.1.4.1.5923.1.1.1.5
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: TRUE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonPrincipalName,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonPrincipalName
+lDAPDisplayName: eduPersonPrincipalName
+adminDisplayName: eduPersonPrincipalName
+adminDescription: The "NetID" of the person for the purposes of inter-institutional authentication. It should be represented in the form "user@scope" where scope defines a local security domain
+attributeID: 1.3.6.1.4.1.5923.1.1.1.6
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: TRUE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonEntitlement,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonEntitlement
+lDAPDisplayName: eduPersonEntitlement
+adminDisplayName: eduPersonEntitlement
+adminDescription: URI (either URN or URL) that indicates a set of rights to specific resources
+attributeID: 1.3.6.1.4.1.5923.1.1.1.7
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonPrimaryOrgUnitDN,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonPrimaryOrgUnitDN
+lDAPDisplayName: eduPersonPrimaryOrgUnitDN
+adminDisplayName: eduPersonPrimaryOrgUnitDN
+adminDescription: The distinguished name (DN) of the directory entry representing the person's primary Organizational Unit(s)
+attributeID: 1.3.6.1.4.1.5923.1.1.1.8
+attributeSyntax: 2.5.5.1
+oMSyntax: 127
+isSingleValued: TRUE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonScopedAffiliation,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonScopedAffiliation
+lDAPDisplayName: eduPersonScopedAffiliation
+adminDisplayName: eduPersonScopedAffiliation
+adminDescription: Specifies the person's affiliation (see eduPersonAffiliation) within a particular security domain, the values consist of a left (affiliation) and right component (security domain) separated by an "@" sign
+attributeID: 1.3.6.1.4.1.5923.1.1.1.9
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonTargetedID,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonTargetedID
+lDAPDisplayName: eduPersonTargetedID
+adminDisplayName: eduPersonTargetedID
+adminDescription: a tuple consisting of an opaque identifier for the principal, a name for the source of the identifier, and a name for the intended audience of the identifiere
+attributeID: 1.3.6.1.4.1.5923.1.1.1.10
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonAssurance,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonAssurance
+lDAPDisplayName: eduPersonAssurance
+adminDisplayName: eduPersonAssurance
+adminDescription: Set of URIs that assert compliance with specific standards for identity assurance.
+attributeID: 1.3.6.1.4.1.5923.1.1.1.11
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonPrincipalNamePrior,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonPrincipalNamePrior
+lDAPDisplayName: eduPersonPrincipalNamePrior
+adminDisplayName: eduPersonPrincipalNamePrior
+adminDescription: The Previous "NetID" of the person for the purposes of inter-institutional authentication. It should be represented in the form "user@scope" where scope defines a local security domain
+attributeID: 1.3.6.1.4.1.5923.1.1.1.12
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 1
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonUniqueID,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonUniqueID
+lDAPDisplayName: eduPersonUniqueID
+adminDisplayName: eduPersonUniqueID
+adminDescription: A long-lived, non re-assignable, omnidirectional identifier unique to each individual.
+attributeID: 1.3.6.1.4.1.5923.1.1.1.13
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: TRUE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonOrcid,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonOrcid
+lDAPDisplayName: eduPersonOrcid
+adminDisplayName: eduPersonOrcid
+adminDescription: ORCID iDs are persistent digital identifiers for individual researchers to unambiguously and definitively link them with their scholarly work products. ORCID iDs are assigned, managed and maintained by the ORCID organization.
+attributeID: 1.3.6.1.4.1.5923.1.1.1.16
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonAnalyticsTag,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonAnalyticsTag
+lDAPDisplayName: eduPersonAnalyticsTag
+adminDisplayName: eduPersonAnalyticsTag
+adminDescription: An opaque string that aggregates the use of a service by a set of subjects for the purpose of reporting or analytics by the originating organization.
+attributeID: 1.3.6.1.4.1.5923.1.1.1.17
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: FALSE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn: CN=eduPersonDisplayPronouns,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: attributeSchema
+cn: eduPersonDisplayPronouns
+lDAPDisplayName: eduPersonDisplayPronouns
+adminDisplayName: eduPersonDisplayPronouns
+adminDescription: Text representing the word(s) a person prefers as their personal pronoun(s). Multiple personal pronouns should include separators to support human readability.
+attributeID: 1.3.6.1.4.1.5923.1.1.1.18
+attributeSyntax: 2.5.5.12
+oMSyntax: 64
+isSingleValued: TRUE
+searchFlags: 0
+showInAdvancedViewOnly: TRUE
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+# ==================================================================
+# Object classes
+# ==================================================================
+dn: CN=eduPerson,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: classSchema
+cn: eduPerson
+lDAPDisplayName: eduPerson
+adminDisplayName: eduPerson
+adminDescription: Consists of a set of data elements or attributes about individuals within higher education
+governsID: 1.3.6.1.4.1.5923.1.1.2
+objectClassCategory: 3
+subclassOf: top
+rdnAttId: cn
+mayContain: 1.3.6.1.4.1.5923.1.1.1.1
+mayContain: 1.3.6.1.4.1.5923.1.1.1.2
+mayContain: 1.3.6.1.4.1.5923.1.1.1.3
+mayContain: 1.3.6.1.4.1.5923.1.1.1.4
+mayContain: 1.3.6.1.4.1.5923.1.1.1.5
+mayContain: 1.3.6.1.4.1.5923.1.1.1.6
+mayContain: 1.3.6.1.4.1.5923.1.1.1.7
+mayContain: 1.3.6.1.4.1.5923.1.1.1.8
+mayContain: 1.3.6.1.4.1.5923.1.1.1.9
+mayContain: 1.3.6.1.4.1.5923.1.1.1.10
+mayContain: 1.3.6.1.4.1.5923.1.1.1.11
+mayContain: 1.3.6.1.4.1.5923.1.1.1.12
+mayContain: 1.3.6.1.4.1.5923.1.1.1.13
+mayContain: 1.3.6.1.4.1.5923.1.1.1.16
+mayContain: 1.3.6.1.4.1.5923.1.1.1.17
+mayContain: 1.3.6.1.4.1.5923.1.1.1.18
+defaultObjectCategory: CN=eduPerson,cn=Schema,cn=Configuration,DC=X
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,DC=X
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: eduPerson
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
