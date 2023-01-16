@@ -1,152 +1,155 @@
 # REFEDS Schema Board
-#
+# 
 # eduPerson (202208) - v4.4.0
 #
-# $Customized for OpenLDAP$
+# $Customized for 389 directory server$
 ################################################################################
 #
 # dn: cn=schema
 #
 ################################################################################
 #
-dn: cn=eduPerson,cn=schema,cn=config
-objectClass: olcSchemaConfig
-cn: eduPerson
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.1
+dn: cn=schema
+#
+################################################################################
+#
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.1
     NAME 'eduPersonAffiliation'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
     SUBSTR caseIgnoreSubstringsMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.2
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.2
     NAME 'eduPersonNickname'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
     SUBSTR caseIgnoreSubstringsMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.3
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.3
     NAME 'eduPersonOrgDN'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY distinguishedNameMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.12'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.12
     SINGLE-VALUE )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.4
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.4
     NAME 'eduPersonOrgUnitDN'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY distinguishedNameMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.5
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.5
     NAME 'eduPersonPrimaryAffiliation'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
     SUBSTR caseIgnoreSubstringsMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
     SINGLE-VALUE )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.6
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.6
     NAME 'eduPersonPrincipalName'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
     SUBSTR caseIgnoreSubstringsMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
     SINGLE-VALUE )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.12
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.12
     NAME 'eduPersonPrincipalNamePrior'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
     SUBSTR caseIgnoreSubstringsMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.7
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.7
     NAME 'eduPersonEntitlement'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseExactMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.8
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.8
     NAME 'eduPersonPrimaryOrgUnitDN'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY distinguishedNameMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.12'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.12
     SINGLE-VALUE )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.9
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.9
     NAME 'eduPersonScopedAffiliation'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.10
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.10
     NAME 'eduPersonTargetedID'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.11
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.11
     NAME 'eduPersonAssurance'
     DESC 'eduPerson per Internet2 and EDUCAUSE'
     EQUALITY caseIgnoreMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.13
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.13
     NAME 'eduPersonUniqueId'
     DESC 'eduPersonUniqueId per Internet2'
     EQUALITY caseIgnoreMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
 #
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.16
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.16
     NAME 'eduPersonOrcid'
     DESC 'ORCID researcher identifiers belonging to the principal'
     EQUALITY caseIgnoreMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.17
+#
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.17
     NAME 'eduPersonAnalyticsTag'
     DESC 'Arbitrary reporting value associated with a subject or transaction'
     EQUALITY caseExactMatch
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 #
 ################################################################################
-olcAttributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.18
+#
+attributeTypes: ( 1.3.6.1.4.1.5923.1.1.1.18
     NAME 'eduPersonDisplayPronouns'
     DESC 'Human-readable set of pronouns'
-    SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE)
 #
 ################################################################################
 #
-olcObjectClasses: ( 1.3.6.1.4.1.5923.1.1.2
+objectClasses: ( 1.3.6.1.4.1.5923.1.1.2
     NAME 'eduPerson'
     DESC 'eduPerson (202208) - v4.4.0 - REFEDS Schema Board'
     AUXILIARY
@@ -156,5 +159,3 @@ olcObjectClasses: ( 1.3.6.1.4.1.5923.1.1.2
           eduPersonPrimaryOrgUnitDN $ eduPersonScopedAffiliation $
           eduPersonTargetedID $ eduPersonAssurance $
           eduPersonUniqueId $ eduPersonOrcid $ eduPersonDisplayPronouns ) )
-#
-################################################################################
